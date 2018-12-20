@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E67D05721CA06D90030A9F5 /* FridgeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E67D05621CA06D90030A9F5 /* FridgeCell.swift */; };
 		EDD0D77C21C7F4E2008B48A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD0D77B21C7F4E2008B48A4 /* AppDelegate.swift */; };
-		EDD0D77E21C7F4E2008B48A4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD0D77D21C7F4E2008B48A4 /* ViewController.swift */; };
+		EDD0D77E21C7F4E2008B48A4 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD0D77D21C7F4E2008B48A4 /* MainVC.swift */; };
 		EDD0D78121C7F4E2008B48A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDD0D77F21C7F4E2008B48A4 /* Main.storyboard */; };
 		EDD0D78421C7F4E2008B48A4 /* SimpleFridge.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EDD0D78221C7F4E2008B48A4 /* SimpleFridge.xcdatamodeld */; };
 		EDD0D78621C7F4E4008B48A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDD0D78521C7F4E4008B48A4 /* Assets.xcassets */; };
@@ -35,9 +36,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E67D05621CA06D90030A9F5 /* FridgeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FridgeCell.swift; sourceTree = "<group>"; };
 		EDD0D77821C7F4E2008B48A4 /* SimpleFridge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleFridge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDD0D77B21C7F4E2008B48A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EDD0D77D21C7F4E2008B48A4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EDD0D77D21C7F4E2008B48A4 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		EDD0D78021C7F4E2008B48A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EDD0D78321C7F4E2008B48A4 /* SimpleFridge.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SimpleFridge.xcdatamodel; sourceTree = "<group>"; };
 		EDD0D78521C7F4E4008B48A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -76,6 +78,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E67D05221CA04D20030A9F5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EDD0D77D21C7F4E2008B48A4 /* MainVC.swift */,
+				0E67D05621CA06D90030A9F5 /* FridgeCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0E67D05321CA05EE0030A9F5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0E67D05421CA06010030A9F5 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		0E67D05521CA060B0030A9F5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		EDD0D76F21C7F4E2008B48A4 = {
 			isa = PBXGroup;
 			children = (
@@ -99,8 +131,11 @@
 		EDD0D77A21C7F4E2008B48A4 /* SimpleFridge */ = {
 			isa = PBXGroup;
 			children = (
+				0E67D05521CA060B0030A9F5 /* ViewModel */,
+				0E67D05421CA06010030A9F5 /* Util */,
+				0E67D05321CA05EE0030A9F5 /* Model */,
+				0E67D05221CA04D20030A9F5 /* View */,
 				EDD0D77B21C7F4E2008B48A4 /* AppDelegate.swift */,
-				EDD0D77D21C7F4E2008B48A4 /* ViewController.swift */,
 				EDD0D77F21C7F4E2008B48A4 /* Main.storyboard */,
 				EDD0D78521C7F4E4008B48A4 /* Assets.xcassets */,
 				EDD0D78721C7F4E4008B48A4 /* LaunchScreen.storyboard */,
@@ -138,6 +173,7 @@
 				EDD0D77421C7F4E2008B48A4 /* Sources */,
 				EDD0D77521C7F4E2008B48A4 /* Frameworks */,
 				EDD0D77621C7F4E2008B48A4 /* Resources */,
+				0E0E7E5221CB7C8F0043C79F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -254,12 +290,33 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0E0E7E5221CB7C8F0043C79F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "TAGS=\"TODO:|FIXME:\"\necho \"searching ${SRCROOT} for ${TAGS}\"\nfind \"${SRCROOT}\" \\( -name \"*.swift\" \\) -print0 \\\n| xargs -0 egrep --with-filename --line-number --only-matching \"($TAGS).*\\$\" \\\n| perl -p -e \"s/($TAGS)/ warning: \\$1/\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		EDD0D77421C7F4E2008B48A4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDD0D77E21C7F4E2008B48A4 /* ViewController.swift in Sources */,
+				0E67D05721CA06D90030A9F5 /* FridgeCell.swift in Sources */,
+				EDD0D77E21C7F4E2008B48A4 /* MainVC.swift in Sources */,
 				EDD0D78421C7F4E2008B48A4 /* SimpleFridge.xcdatamodeld in Sources */,
 				EDD0D77C21C7F4E2008B48A4 /* AppDelegate.swift in Sources */,
 			);
