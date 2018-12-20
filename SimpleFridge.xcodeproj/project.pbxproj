@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0E67D05721CA06D90030A9F5 /* FridgeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E67D05621CA06D90030A9F5 /* FridgeCell.swift */; };
+		2B8E60811369337C10A7B1DF /* Pods_SimpleFridgeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67723B82F6EF933712A90B45 /* Pods_SimpleFridgeUITests.framework */; };
+		A9E71AE1D14A1DF6930E2DFD /* Pods_SimpleFridgeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5984C8708E707EB25E3142E0 /* Pods_SimpleFridgeTests.framework */; };
+		AC8BE30C62F4E3ED3325991B /* Pods_SimpleFridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D9BAF4A6BEE46E17EC30EFB /* Pods_SimpleFridge.framework */; };
 		EDD0D77C21C7F4E2008B48A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD0D77B21C7F4E2008B48A4 /* AppDelegate.swift */; };
 		EDD0D77E21C7F4E2008B48A4 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD0D77D21C7F4E2008B48A4 /* MainVC.swift */; };
 		EDD0D78121C7F4E2008B48A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDD0D77F21C7F4E2008B48A4 /* Main.storyboard */; };
@@ -37,6 +40,13 @@
 
 /* Begin PBXFileReference section */
 		0E67D05621CA06D90030A9F5 /* FridgeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FridgeCell.swift; sourceTree = "<group>"; };
+		18935D33A4615A2EB05DB99E /* Pods-SimpleFridge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleFridge.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleFridge/Pods-SimpleFridge.release.xcconfig"; sourceTree = "<group>"; };
+		467CA7BBBAC6D5916820F09C /* Pods-SimpleFridgeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleFridgeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleFridgeUITests/Pods-SimpleFridgeUITests.release.xcconfig"; sourceTree = "<group>"; };
+		52D03B892D09D5C405AC8A07 /* Pods-SimpleFridgeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleFridgeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleFridgeTests/Pods-SimpleFridgeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5984C8708E707EB25E3142E0 /* Pods_SimpleFridgeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleFridgeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		67723B82F6EF933712A90B45 /* Pods_SimpleFridgeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleFridgeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D9BAF4A6BEE46E17EC30EFB /* Pods_SimpleFridge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleFridge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5B38288AA5F161786D75ACA /* Pods-SimpleFridgeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleFridgeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleFridgeTests/Pods-SimpleFridgeTests.release.xcconfig"; sourceTree = "<group>"; };
 		EDD0D77821C7F4E2008B48A4 /* SimpleFridge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleFridge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDD0D77B21C7F4E2008B48A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDD0D77D21C7F4E2008B48A4 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
@@ -51,6 +61,8 @@
 		EDD0D79A21C7F4E4008B48A4 /* SimpleFridgeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleFridgeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDD0D79E21C7F4E4008B48A4 /* SimpleFridgeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleFridgeUITests.swift; sourceTree = "<group>"; };
 		EDD0D7A021C7F4E4008B48A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F2CA1E43BAB158BA1F8B070A /* Pods-SimpleFridgeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleFridgeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleFridgeUITests/Pods-SimpleFridgeUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		FDDCD8DCE0E64EDA9EF93C03 /* Pods-SimpleFridge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleFridge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleFridge/Pods-SimpleFridge.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC8BE30C62F4E3ED3325991B /* Pods_SimpleFridge.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9E71AE1D14A1DF6930E2DFD /* Pods_SimpleFridgeTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B8E60811369337C10A7B1DF /* Pods_SimpleFridgeUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,6 +123,16 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		E537336DC526E84F20BA542A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7D9BAF4A6BEE46E17EC30EFB /* Pods_SimpleFridge.framework */,
+				5984C8708E707EB25E3142E0 /* Pods_SimpleFridgeTests.framework */,
+				67723B82F6EF933712A90B45 /* Pods_SimpleFridgeUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EDD0D76F21C7F4E2008B48A4 = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +140,8 @@
 				EDD0D79221C7F4E4008B48A4 /* SimpleFridgeTests */,
 				EDD0D79D21C7F4E4008B48A4 /* SimpleFridgeUITests */,
 				EDD0D77921C7F4E2008B48A4 /* Products */,
+				FA6A03E81FF91279B1318FF8 /* Pods */,
+				E537336DC526E84F20BA542A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -163,6 +190,19 @@
 			path = SimpleFridgeUITests;
 			sourceTree = "<group>";
 		};
+		FA6A03E81FF91279B1318FF8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FDDCD8DCE0E64EDA9EF93C03 /* Pods-SimpleFridge.debug.xcconfig */,
+				18935D33A4615A2EB05DB99E /* Pods-SimpleFridge.release.xcconfig */,
+				52D03B892D09D5C405AC8A07 /* Pods-SimpleFridgeTests.debug.xcconfig */,
+				E5B38288AA5F161786D75ACA /* Pods-SimpleFridgeTests.release.xcconfig */,
+				F2CA1E43BAB158BA1F8B070A /* Pods-SimpleFridgeUITests.debug.xcconfig */,
+				467CA7BBBAC6D5916820F09C /* Pods-SimpleFridgeUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -170,10 +210,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EDD0D7A321C7F4E4008B48A4 /* Build configuration list for PBXNativeTarget "SimpleFridge" */;
 			buildPhases = (
+				73A6BC2056BCD37E71DC1BD5 /* [CP] Check Pods Manifest.lock */,
 				EDD0D77421C7F4E2008B48A4 /* Sources */,
 				EDD0D77521C7F4E2008B48A4 /* Frameworks */,
 				EDD0D77621C7F4E2008B48A4 /* Resources */,
 				0E0E7E5221CB7C8F0043C79F /* ShellScript */,
+				76B2B4A0877EBAF5549DCE6A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -188,9 +230,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EDD0D7A621C7F4E4008B48A4 /* Build configuration list for PBXNativeTarget "SimpleFridgeTests" */;
 			buildPhases = (
+				62987C3A6872164B71546A8A /* [CP] Check Pods Manifest.lock */,
 				EDD0D78B21C7F4E4008B48A4 /* Sources */,
 				EDD0D78C21C7F4E4008B48A4 /* Frameworks */,
 				EDD0D78D21C7F4E4008B48A4 /* Resources */,
+				8CFDC65DC84427E8581A8BB8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -206,6 +250,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EDD0D7A921C7F4E4008B48A4 /* Build configuration list for PBXNativeTarget "SimpleFridgeUITests" */;
 			buildPhases = (
+				9FBB6DCD3132027281B99122 /* [CP] Check Pods Manifest.lock */,
 				EDD0D79621C7F4E4008B48A4 /* Sources */,
 				EDD0D79721C7F4E4008B48A4 /* Frameworks */,
 				EDD0D79821C7F4E4008B48A4 /* Resources */,
@@ -307,6 +352,122 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "TAGS=\"TODO:|FIXME:\"\necho \"searching ${SRCROOT} for ${TAGS}\"\nfind \"${SRCROOT}\" \\( -name \"*.swift\" \\) -print0 \\\n| xargs -0 egrep --with-filename --line-number --only-matching \"($TAGS).*\\$\" \\\n| perl -p -e \"s/($TAGS)/ warning: \\$1/\"\n";
+		};
+		62987C3A6872164B71546A8A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SimpleFridgeTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		73A6BC2056BCD37E71DC1BD5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SimpleFridge-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		76B2B4A0877EBAF5549DCE6A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SimpleFridge/Pods-SimpleFridge-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SimpleFridge/Pods-SimpleFridge-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8CFDC65DC84427E8581A8BB8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SimpleFridgeTests/Pods-SimpleFridgeTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxBlocking/RxBlocking.framework",
+				"${BUILT_PRODUCTS_DIR}/RxTest/RxTest.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBlocking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxTest.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SimpleFridgeTests/Pods-SimpleFridgeTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9FBB6DCD3132027281B99122 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SimpleFridgeUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -491,6 +652,7 @@
 		};
 		EDD0D7A421C7F4E4008B48A4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FDDCD8DCE0E64EDA9EF93C03 /* Pods-SimpleFridge.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -509,6 +671,7 @@
 		};
 		EDD0D7A521C7F4E4008B48A4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 18935D33A4615A2EB05DB99E /* Pods-SimpleFridge.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -527,6 +690,7 @@
 		};
 		EDD0D7A721C7F4E4008B48A4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 52D03B892D09D5C405AC8A07 /* Pods-SimpleFridgeTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -548,6 +712,7 @@
 		};
 		EDD0D7A821C7F4E4008B48A4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E5B38288AA5F161786D75ACA /* Pods-SimpleFridgeTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -569,6 +734,7 @@
 		};
 		EDD0D7AA21C7F4E4008B48A4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F2CA1E43BAB158BA1F8B070A /* Pods-SimpleFridgeUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -589,6 +755,7 @@
 		};
 		EDD0D7AB21C7F4E4008B48A4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 467CA7BBBAC6D5916820F09C /* Pods-SimpleFridgeUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
