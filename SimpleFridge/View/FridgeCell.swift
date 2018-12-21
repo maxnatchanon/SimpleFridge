@@ -9,6 +9,8 @@
 import UIKit
 
 class FridgeCell: UITableViewCell {
+    
+    static let identifier = "fridgeCell"
 
     @IBOutlet weak var fridgeNameLbl: UILabel!
     @IBOutlet weak var itemCountLbl: UILabel!
@@ -22,6 +24,11 @@ class FridgeCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+    }
+    
+    func insertDataWith(fridge: Fridge) {
+        self.fridgeNameLbl.text = fridge.name ?? ""
+        self.itemCountLbl.text = String(fridge.itemCount)
     }
 
 }
