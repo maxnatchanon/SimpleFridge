@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,64 +15,68 @@
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainBG" translatesAutoresizingMaskIntoConstraints="NO" id="v66-ji-6w5">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="uCU-Aq-r5c">
-                                <rect key="frame" x="49.5" y="249" width="276.5" height="169.5"/>
+                                <rect key="frame" x="25" y="321.33333333333331" width="325" height="169.33333333333331"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="H94-Wy-B6a">
-                                        <rect key="frame" x="88" y="0.0" width="100" height="100"/>
+                                        <rect key="frame" x="112.66666666666666" y="0.0" width="100" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="5JS-01-vjc"/>
                                             <constraint firstAttribute="height" constant="100" id="i1R-sx-PSP"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wEJ-CQ-yxG">
-                                        <rect key="frame" x="0.0" y="108" width="276.5" height="61.5"/>
+                                        <rect key="frame" x="0.0" y="107.99999999999999" width="325" height="61.333333333333329"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="61.5" id="vhT-ul-8Zu"/>
-                                            <constraint firstAttribute="width" constant="276.5" id="vjf-uy-S7Y"/>
                                         </constraints>
                                         <attributedString key="attributedText">
                                             <fragment content="Simple">
                                                 <attributes>
                                                     <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <font key="NSFont" size="45" name="AvenirNext-Regular"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
                                             <fragment content="Fridge">
                                                 <attributes>
                                                     <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <font key="NSFont" size="45" name="AvenirNext-Medium"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
                                         </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="wEJ-CQ-yxG" secondAttribute="trailing" id="S4a-P7-eAE"/>
+                                    <constraint firstItem="wEJ-CQ-yxG" firstAttribute="leading" secondItem="uCU-Aq-r5c" secondAttribute="leading" id="UGq-km-fM9"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="uCU-Aq-r5c" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="9VU-r2-3Ju"/>
+                            <constraint firstItem="uCU-Aq-r5c" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="CmT-ta-ekI"/>
                             <constraint firstItem="v66-ji-6w5" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="UbC-bh-n9M"/>
                             <constraint firstItem="v66-ji-6w5" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="Uqb-ga-99o"/>
-                            <constraint firstItem="v66-ji-6w5" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="ePD-rv-W4P"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uCU-Aq-r5c" secondAttribute="trailing" constant="25" id="aqc-3Y-gr9"/>
                             <constraint firstItem="uCU-Aq-r5c" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="mXn-9J-v34"/>
                             <constraint firstItem="v66-ji-6w5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rjH-vC-1sY"/>
+                            <constraint firstAttribute="bottom" secondItem="v66-ji-6w5" secondAttribute="bottom" id="zPw-XQ-bkN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="52" y="374.66266866566718"/>
+            <point key="canvasLocation" x="52" y="374.6305418719212"/>
         </scene>
     </scenes>
     <resources>

@@ -23,6 +23,7 @@ class MainVC: UIViewController {
     private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     
+    
     // MARK:- Main function
     
     override func viewDidLoad() {
@@ -45,19 +46,20 @@ class MainVC: UIViewController {
     }
     
     
+
     // MARK:- Subfunction
     
-    // Add gesture recognizer for addFridgeView
-    // When tapped, call showAddFridgeAlert()
+    /// Add gesture recognizer for addFridgeView
+    /// When tapped, call showAddFridgeAlert()
     private func setUpAddFridgeBtn() {
         addFridgeView.layer.cornerRadius = 10
         let addFridgeTap = UITapGestureRecognizer(target: self, action: #selector(self.showAddFridgeAlert))
         addFridgeView.addGestureRecognizer(addFridgeTap)
     }
     
-    // Show alert with textfield for user to type in the new fridge name
-    // Try creating new fridge with that name
-    // If failed, show fail alert with function below
+    /// Show alert with textfield for user to type in the new fridge name
+    /// Try creating new fridge with that name
+    /// If failed, show fail alert with function below
     @objc private func showAddFridgeAlert() {
         let alert = UIAlertController(title: "Add new fridge", message: "Enter fridge name", preferredStyle: .alert)
         
@@ -86,8 +88,8 @@ class MainVC: UIViewController {
         self.present(unsuccessAlert, animated: true, completion: nil)
     }
     
-    // Bind fridge table view data source to fridgeList in mainVM
-    // Add row select action, go to item screen
+    /// Bind fridge table view data source to fridgeList in mainVM
+    /// Add row select action, go to item screen
     private func bindTableView() {
         mainVM.fridgeList.asObservable()
             .bind(to: fridgeTableView.rx.items(cellIdentifier: FridgeCell.identifier, cellType: FridgeCell.self)) {
