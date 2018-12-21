@@ -14,18 +14,19 @@ import RxSwift
 
 class MainVM {
     
-    var fridgeList: Variable<[Fridge]>
+    var fridgeList: BehaviorRelay<[Fridge]>
     private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     init() {
-        fridgeList = Variable([])
+        fridgeList = BehaviorRelay(value: [])
         fetchFridgeData()
     }
     
     func fetchFridgeData() {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Fridge")
         do {
-            fridgeList.value = try context.fetch(request) as! [Fridge]
+            let data = try context.fetch(request) as! [Fridge]
+            fridgeList.accept(data)
         } catch {
             print("Fetch fridge data failed")
         }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18A391" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18A389" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="FavoriteItem" representedClassName="FavoriteItem" syncable="YES" codeGenerationType="class">
         <attribute name="icon" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
@@ -10,8 +10,8 @@
         <attribute name="createDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="itemCount" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="favoriteItems" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FavoriteItem" inverseName="fridge" inverseEntity="FavoriteItem" syncable="YES"/>
-        <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Item" inverseName="fridge" inverseEntity="Item" syncable="YES"/>
+        <relationship name="favoriteItems" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="FavoriteItem" inverseName="fridge" inverseEntity="FavoriteItem" syncable="YES"/>
+        <relationship name="items" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Item" inverseName="fridge" inverseEntity="Item" syncable="YES"/>
     </entity>
     <entity name="Item" representedClassName="Item" syncable="YES" codeGenerationType="class">
         <attribute name="addDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
@@ -23,8 +23,8 @@
         <relationship name="fridge" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Fridge" inverseName="items" inverseEntity="Fridge" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Fridge" positionX="97.796875" positionY="-178.1171875" width="128" height="118"/>
-        <element name="Item" positionX="313.41796875" positionY="-177.55078125" width="128" height="150"/>
         <element name="FavoriteItem" positionX="-81.61328125" positionY="-163.59375" width="128" height="103"/>
+        <element name="Fridge" positionX="97.796875" positionY="-178.1171875" width="128" height="120"/>
+        <element name="Item" positionX="313.41796875" positionY="-177.55078125" width="128" height="150"/>
     </elements>
 </model>
