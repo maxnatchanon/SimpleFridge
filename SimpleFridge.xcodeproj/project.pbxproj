@@ -13,6 +13,8 @@
 		AC8BE30C62F4E3ED3325991B /* Pods_SimpleFridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D9BAF4A6BEE46E17EC30EFB /* Pods_SimpleFridge.framework */; };
 		ED30BEE821CD248D0033B3D0 /* MainVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED30BEE721CD248D0033B3D0 /* MainVM.swift */; };
 		ED30BEEA21CD4DEE0033B3D0 /* ItemVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED30BEE921CD4DEE0033B3D0 /* ItemVM.swift */; };
+		EDBE894621CE797C006A91D3 /* ItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBE894521CE797C006A91D3 /* ItemVC.swift */; };
+		EDBE894821CE7F18006A91D3 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBE894721CE7F18006A91D3 /* ItemCell.swift */; };
 		EDD0D77C21C7F4E2008B48A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD0D77B21C7F4E2008B48A4 /* AppDelegate.swift */; };
 		EDD0D77E21C7F4E2008B48A4 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD0D77D21C7F4E2008B48A4 /* MainVC.swift */; };
 		EDD0D78121C7F4E2008B48A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDD0D77F21C7F4E2008B48A4 /* Main.storyboard */; };
@@ -51,6 +53,8 @@
 		E5B38288AA5F161786D75ACA /* Pods-SimpleFridgeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleFridgeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleFridgeTests/Pods-SimpleFridgeTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED30BEE721CD248D0033B3D0 /* MainVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVM.swift; sourceTree = "<group>"; };
 		ED30BEE921CD4DEE0033B3D0 /* ItemVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemVM.swift; sourceTree = "<group>"; };
+		EDBE894521CE797C006A91D3 /* ItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemVC.swift; sourceTree = "<group>"; };
+		EDBE894721CE7F18006A91D3 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		EDD0D77821C7F4E2008B48A4 /* SimpleFridge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleFridge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDD0D77B21C7F4E2008B48A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDD0D77D21C7F4E2008B48A4 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
@@ -101,7 +105,9 @@
 			isa = PBXGroup;
 			children = (
 				EDD0D77D21C7F4E2008B48A4 /* MainVC.swift */,
+				EDBE894521CE797C006A91D3 /* ItemVC.swift */,
 				0E67D05621CA06D90030A9F5 /* FridgeCell.swift */,
+				EDBE894721CE7F18006A91D3 /* ItemCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -448,11 +454,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDBE894821CE7F18006A91D3 /* ItemCell.swift in Sources */,
 				0E67D05721CA06D90030A9F5 /* FridgeCell.swift in Sources */,
 				ED30BEEA21CD4DEE0033B3D0 /* ItemVM.swift in Sources */,
 				ED30BEE821CD248D0033B3D0 /* MainVM.swift in Sources */,
 				EDD0D77E21C7F4E2008B48A4 /* MainVC.swift in Sources */,
 				EDD0D78421C7F4E2008B48A4 /* SimpleFridge.xcdatamodeld in Sources */,
+				EDBE894621CE797C006A91D3 /* ItemVC.swift in Sources */,
 				EDD0D77C21C7F4E2008B48A4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
