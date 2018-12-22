@@ -15,6 +15,7 @@
 		ED30BEEA21CD4DEE0033B3D0 /* ItemVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED30BEE921CD4DEE0033B3D0 /* ItemVM.swift */; };
 		EDBE894621CE797C006A91D3 /* ItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBE894521CE797C006A91D3 /* ItemVC.swift */; };
 		EDBE894821CE7F18006A91D3 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBE894721CE7F18006A91D3 /* ItemCell.swift */; };
+		EDBE894A21CE8F0C006A91D3 /* Segue.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBE894921CE8F0C006A91D3 /* Segue.swift */; };
 		EDD0D77C21C7F4E2008B48A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD0D77B21C7F4E2008B48A4 /* AppDelegate.swift */; };
 		EDD0D77E21C7F4E2008B48A4 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD0D77D21C7F4E2008B48A4 /* MainVC.swift */; };
 		EDD0D78121C7F4E2008B48A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDD0D77F21C7F4E2008B48A4 /* Main.storyboard */; };
@@ -55,6 +56,7 @@
 		ED30BEE921CD4DEE0033B3D0 /* ItemVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemVM.swift; sourceTree = "<group>"; };
 		EDBE894521CE797C006A91D3 /* ItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemVC.swift; sourceTree = "<group>"; };
 		EDBE894721CE7F18006A91D3 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
+		EDBE894921CE8F0C006A91D3 /* Segue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Segue.swift; sourceTree = "<group>"; };
 		EDD0D77821C7F4E2008B48A4 /* SimpleFridge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleFridge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDD0D77B21C7F4E2008B48A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDD0D77D21C7F4E2008B48A4 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 		0E67D05421CA06010030A9F5 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				EDBE894921CE8F0C006A91D3 /* Segue.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -461,6 +464,7 @@
 				EDD0D77E21C7F4E2008B48A4 /* MainVC.swift in Sources */,
 				EDD0D78421C7F4E2008B48A4 /* SimpleFridge.xcdatamodeld in Sources */,
 				EDBE894621CE797C006A91D3 /* ItemVC.swift in Sources */,
+				EDBE894A21CE8F0C006A91D3 /* Segue.swift in Sources */,
 				EDD0D77C21C7F4E2008B48A4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

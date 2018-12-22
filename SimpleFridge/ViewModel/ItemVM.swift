@@ -16,6 +16,9 @@ class ItemVM {
     
     var fridge: Fridge
     var itemList: BehaviorRelay<[Item]>
+    var itemCount: Int {
+        return itemList.value.count
+    }
     private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     init(withFridge fridge: Fridge) {

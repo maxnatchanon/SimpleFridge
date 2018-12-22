@@ -99,11 +99,28 @@ class MainVC: UIViewController {
             }.disposed(by: disposeBag)
         
         fridgeTableView.rx.modelSelected(Fridge.self).subscribe(onNext: { (fridge) in
-            // TODO: Go to item screen with 'fridge'
+            self.performSegue(withIdentifier: SegueIdentifier.showItem, sender: fridge)
+            
             if let selectedRowIndexPath = self.fridgeTableView.indexPathForSelectedRow {
                 self.fridgeTableView.deselectRow(at: selectedRowIndexPath, animated: true)
             }
         }).disposed(by: disposeBag)
+    }
+    
+    /// Prepare for segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let identifierString = segue.identifier,
+            let identifier = SegueIdentifier(rawValue: identifierString) else {
+            assertionFailure("Getting segue identifier failed")
+            return
+        }
+        
+        switch identifier {
+        case .showItem:
+            if let itemVC = segue.destination as? ItemVC, let fridge = sender as? Fridge {
+                itemVC.fridge = fridge
+            }
+        }
     }
     
 }
