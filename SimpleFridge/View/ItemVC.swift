@@ -38,6 +38,7 @@ class ItemVC: UIViewController {
     }
 
     @IBAction func addBtnPressed(_ sender: Any) {
+        performSegue(withIdentifier: SegueIdentifier.showAdd, sender: fridge)
     }
     
     @IBAction func backBtnPressed(_ sender: Any) {
@@ -49,6 +50,8 @@ class ItemVC: UIViewController {
     
     // MARK:- Subfunction
     
+    /// Bind emptyView to itemList.count
+    /// if there is no item, show emptyView
     func bindEmptyView() {
         itemVM.itemList.asObservable().filter { (list) -> Bool in
             list.count == 0
@@ -63,6 +66,8 @@ class ItemVC: UIViewController {
             }.disposed(by: disposeBag)
     }
     
+    /// Bind item table view data source to itemList in itemVM
+    /// Add row select action, show item detail
     func bindTableView() {
         itemVM.itemList.asObservable()
             .bind(to: itemTableView.rx.items(cellIdentifier: ItemCell.identifier, cellType: ItemCell.self)) {
@@ -74,6 +79,23 @@ class ItemVC: UIViewController {
         itemTableView.rx.modelSelected(Item.self).subscribe(onNext: { (item) in
             // TODO: Show item detail
         }).disposed(by: disposeBag)
+    }
+    
+    /// Prepare for segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let identifierString = segue.identifier,
+            let identifier = SegueIdentifier(rawValue: identifierString) else {
+                assertionFailure("Getting segue identifier failed")
+                return
+        }
+        
+        switch identifier {
+        case .showAdd:
+            if let addVC = segue.destination as? AddVC, let fridge = sender as? Fridge {
+                addVC.fridge = fridge
+            }
+        default: return
+        }
     }
     
 }

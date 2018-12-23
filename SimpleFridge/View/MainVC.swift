@@ -98,7 +98,8 @@ class MainVC: UIViewController {
                 cell.selectionStyle = .none
             }.disposed(by: disposeBag)
         
-        fridgeTableView.rx.modelSelected(Fridge.self).subscribe(onNext: { (fridge) in
+        fridgeTableView.rx.modelSelected(Fridge.self)
+            .subscribe(onNext: { (fridge) in
                 self.performSegue(withIdentifier: SegueIdentifier.showItem, sender: fridge)
             
                 if let selectedRowIndexPath = self.fridgeTableView.indexPathForSelectedRow {
@@ -120,6 +121,7 @@ class MainVC: UIViewController {
             if let itemVC = segue.destination as? ItemVC, let fridge = sender as? Fridge {
                 itemVC.fridge = fridge
             }
+        default: return
         }
     }
     
