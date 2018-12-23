@@ -99,12 +99,12 @@ class MainVC: UIViewController {
             }.disposed(by: disposeBag)
         
         fridgeTableView.rx.modelSelected(Fridge.self).subscribe(onNext: { (fridge) in
-            self.performSegue(withIdentifier: SegueIdentifier.showItem, sender: fridge)
+                self.performSegue(withIdentifier: SegueIdentifier.showItem, sender: fridge)
             
-            if let selectedRowIndexPath = self.fridgeTableView.indexPathForSelectedRow {
-                self.fridgeTableView.deselectRow(at: selectedRowIndexPath, animated: true)
-            }
-        }).disposed(by: disposeBag)
+                if let selectedRowIndexPath = self.fridgeTableView.indexPathForSelectedRow {
+                    self.fridgeTableView.deselectRow(at: selectedRowIndexPath, animated: true)
+                }
+            }).disposed(by: disposeBag)
     }
     
     /// Prepare for segue
