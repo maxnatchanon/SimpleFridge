@@ -21,6 +21,11 @@ class AddVM {
     var icon: BehaviorRelay<String>
     private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
+    private let errorMessages = ["Item name cannot be empty.",
+                                 "Amount must be greater than zero.",
+                                 "Unit cannot be empty.",
+                                 "Expire date must be after today."]
+    
     init(withFridge fridge : Fridge) {
         self.fridge = fridge
         itemName = BehaviorRelay(value: "")
@@ -35,24 +40,37 @@ class AddVM {
         if (itemName.value == "") { result.append(0) }
         if (amountString.value == "" || amountString.value == "0") { result.append(1) }
         if (unit.value == "") { result.append(2) }
-        if (expireDate.value < Date()) { result.append(3) }
+        if (expireDate.value <= Date()) { result.append(3) }
         return result
     }
     
-    func saveData() {
+    func getErrorMessage(forError errorIdx: [Int]) -> String {
+        var message = ""
+        for error in errorIdx {
+            message += errorMessages[error]
+            message += "\n"
+        }
+        return message
+    }
+    
+    func saveData(completion: ()->Void) {
         let entity = NSEntityDescription.entity(forEntityName: "Item", in: context)
-        let newItem = NSManagedObject(entity: entity!, insertInto: context)
-        newItem.setValue(itemName.value, forKey: "name")
-        newItem.setValue(Int(amountString.value), forKey: "amount")
-        newItem.setValue(unit.value.lowercased().capitalized, forKey: "unit")
-        newItem.setValue(expireDate.value, forKey: "expireDate")
-        newItem.setValue(Date(), forKey: "addDate")
-        newItem.setValue(icon.value, forKey: "icon")
+        let newItem = NSManagedObject(entity: entity!, insertInto: context) as! Item
+        newItem.name = itemName.value
+        newItem.amount = Int32(amountString.value) ?? 1
+        newItem.unit = unit.value.lowercased().capitalized
+        newItem.expireDate = expireDate.value
+        newItem.addDate = Date()
+        newItem.icon = icon.value
+        newItem.fridge = fridge
+        fridge.items?.adding(newItem)
+        fridge.itemCount += 1
         do {
             try context.save()
         } catch {
             print("Saving new item failed")
         }
+        completion()
     }
     
 }

@@ -21,7 +21,6 @@ class ItemVM {
     init(withFridge fridge: Fridge) {
         self.fridge = fridge
         itemList = BehaviorRelay(value: [])
-        fetchItemData()
     }
     
     func fetchItemData() {

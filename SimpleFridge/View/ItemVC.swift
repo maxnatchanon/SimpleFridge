@@ -31,6 +31,10 @@ class ItemVC: UIViewController {
         setUpTableView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        itemVM.fetchItemData()
+    }
+    
     func setUpTableView() {
         itemTableView.rowHeight = 84
         bindEmptyView()
