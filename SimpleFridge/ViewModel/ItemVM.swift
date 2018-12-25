@@ -16,11 +16,13 @@ class ItemVM {
     
     var fridge: Fridge
     var itemList: BehaviorRelay<[Item]>
+    var selectedItem: BehaviorRelay<Item?>
     private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     init(withFridge fridge: Fridge) {
         self.fridge = fridge
         itemList = BehaviorRelay(value: [])
+        selectedItem = BehaviorRelay(value: nil)
     }
     
     func fetchItemData() {
@@ -31,6 +33,18 @@ class ItemVM {
             itemList.accept(data)
         } catch {
             print("Fetching item failed")
+        }
+    }
+    
+    func selectItem(atIndexPath indexPath: IndexPath) {
+        selectedItem.accept(itemList.value[indexPath.row])
+    }
+    
+    func saveData() {
+        do {
+            try context.save()
+        } catch {
+            print("Saving data failed")
         }
     }
     
