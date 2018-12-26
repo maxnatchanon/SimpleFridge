@@ -24,8 +24,10 @@ class ItemVC: UIViewController {
     @IBOutlet weak var selectedItemExpireMsg: UILabel!
     
     var fridge: Fridge!
-    private let disposeBag = DisposeBag()
-    var showingDetailView = false
+    private var itemVM: ItemVM!
+    private let disposeBag: DisposeBag = DisposeBag()
+    private var showingItemIndex: Int?
+    
     
     
     // MARK:- Main function
@@ -90,15 +92,20 @@ class ItemVC: UIViewController {
             }.disposed(by: disposeBag)
         
         itemTableView.rx.itemSelected.subscribe(onNext: { [weak self] indexPath in
-            if (!(self!.showingDetailView)) {
+            if (self!.showingItemIndex == nil) {
+                self!.showingItemIndex = indexPath.row
                 self!.itemVM.selectItem(atIndexPath: indexPath)
                 self!.lockDetailView(hidden: false)
-            } else {
+            } else if (self!.showingItemIndex != indexPath.row) {
                 self!.lockDetailView(hidden: true)
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.3, execute: {
                     self!.itemVM.selectItem(atIndexPath: indexPath)
                     self!.lockDetailView(hidden: false)
+                    self!.showingItemIndex = indexPath.row
                 })
+            } else {
+                self!.lockDetailView(hidden: true)
+                self!.showingItemIndex = nil
             }
             
         }).disposed(by: disposeBag)
