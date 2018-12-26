@@ -35,6 +35,13 @@ class ItemCell: UITableViewCell {
         expireMsgLbl.text = item.getExpireMessage()
         amountLbl.text = String(item.amount)
         unitLbl.text = item.unit ?? ""
+        
+        let dayCount = item.getDayCountToExpireDate()
+        if (dayCount < 0) {
+            containerView.backgroundColor = UIColor.init(red: 213, green: 213, blue: 213, alpha: 1)
+        } else if (item.getDayCountToExpireDate() <= 1) {
+            containerView.backgroundColor = UIColor.init(red: 255, green: 0, blue: 0, alpha: 0.09)
+        }
     }
 
 }

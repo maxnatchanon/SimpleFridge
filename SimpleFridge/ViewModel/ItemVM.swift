@@ -28,6 +28,8 @@ class ItemVM {
     func fetchItemData() {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Item")
         request.predicate = NSPredicate(format: "fridge == %@", fridge as CVarArg)
+        let sort = NSSortDescriptor(key: #keyPath(Item.expireDate), ascending: true)
+        request.sortDescriptors = [sort]
         do {
             let data = try context.fetch(request) as! [Item]
             itemList.accept(data)
