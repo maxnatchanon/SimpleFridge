@@ -18,11 +18,11 @@ class ItemVC: UIViewController {
     @IBOutlet weak var emptyView: UIView!
     @IBOutlet weak var detailView: UIView!
     @IBOutlet weak var detailViewBottomConstraint: NSLayoutConstraint!
+    
     @IBOutlet weak var selectedItemIcon: UIImageView!
     @IBOutlet weak var selectedItemNameLbl: UILabel!
     @IBOutlet weak var selectedItemExpireMsg: UILabel!
     
-    private var itemVM: ItemVM!
     var fridge: Fridge!
     private let disposeBag = DisposeBag()
     var showingDetailView = false
@@ -47,7 +47,6 @@ class ItemVC: UIViewController {
         bindTableView()
         bindDetailView()
         setUpDetailView()
-        lockDetailView(hidden: true)
     }
     
     @IBAction func addBtnPressed(_ sender: Any) {
@@ -56,7 +55,8 @@ class ItemVC: UIViewController {
     
     @IBAction func backBtnPressed(_ sender: Any) {
         // TODO: Save data?
-        dismiss(animated: true, completion: nil)
+        //self.dismiss(animated: false, completion: nil)
+        performSegue(withIdentifier: "unwindToMain", sender: self)
     }
     
     
@@ -116,6 +116,7 @@ class ItemVC: UIViewController {
     
     /// Set up pan gesture recognizer for detail view
     private func setUpDetailView() {
+        detailViewBottomConstraint.constant = -300
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(self.moveDetailView(_:)))
         detailView.isUserInteractionEnabled = true
         detailView.addGestureRecognizer(panGesture)
@@ -143,14 +144,12 @@ class ItemVC: UIViewController {
             self.detailViewBottomConstraint.constant = (hidden) ? -300 : 0
             self.view.layoutIfNeeded()
         })
-        showingDetailView = !hidden
     }
     
     /// Prepare for segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let identifierString = segue.identifier,
             let identifier = SegueIdentifier(rawValue: identifierString) else {
-                assertionFailure("Getting segue identifier failed")
                 return
         }
         

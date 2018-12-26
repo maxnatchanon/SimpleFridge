@@ -22,6 +22,8 @@ class MainVC: UIViewController {
     private let disposeBag = DisposeBag()
     private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
+    @IBAction func unwindToMain(segue:UIStoryboardSegue){}
+    
     
     
     // MARK:- Main function

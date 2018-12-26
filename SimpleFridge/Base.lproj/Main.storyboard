@@ -204,7 +204,7 @@
                     <connections>
                         <outlet property="addFridgeView" destination="QC4-yV-odm" id="5DL-yF-x3g"/>
                         <outlet property="fridgeTableView" destination="uOD-aj-kag" id="RcZ-GF-Cro"/>
-                        <segue destination="8AM-7C-8Mn" kind="showDetail" identifier="showItem" id="yZn-dP-FzD"/>
+                        <segue destination="8AM-7C-8Mn" kind="showDetail" identifier="showItem" customClass="SegueFromRight" customModule="SimpleFridge" customModuleProvider="target" id="yZn-dP-FzD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -504,10 +504,12 @@
                         <outlet property="selectedItemExpireMsg" destination="fqJ-jf-cVC" id="DDr-Yt-2T2"/>
                         <outlet property="selectedItemIcon" destination="AKx-sk-BH1" id="olu-I1-joN"/>
                         <outlet property="selectedItemNameLbl" destination="rex-P3-nR2" id="Fa8-O3-F0D"/>
-                        <segue destination="52m-ce-B8a" kind="show" identifier="showAdd" id="JMQ-Bg-dhY"/>
+                        <segue destination="52m-ce-B8a" kind="show" identifier="showAdd" customClass="SegueFromRight" customModule="SimpleFridge" customModuleProvider="target" id="JMQ-Bg-dhY"/>
+                        <segue destination="OWt-TO-0lr" kind="unwind" identifier="unwindToMain" customClass="SegueFromRightUnwind" customModule="SimpleFridge" customModuleProvider="target" unwindAction="unwindToMainWithSegue:" id="zlZ-B3-Cic"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bYl-YV-Jpe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="OWt-TO-0lr" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="933.60000000000002" y="129.98500749625188"/>
         </scene>
