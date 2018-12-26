@@ -22,6 +22,10 @@ class ItemVC: UIViewController {
     @IBOutlet weak var selectedItemIcon: UIImageView!
     @IBOutlet weak var selectedItemNameLbl: UILabel!
     @IBOutlet weak var selectedItemExpireMsg: UILabel!
+    @IBOutlet weak var selectedItemAmount: UILabel!
+    @IBOutlet weak var selectedItemDecreaseAmountBtn: UIButton!
+    @IBOutlet weak var selectedtemIncreaseAmountBtn: UIButton!
+    @IBOutlet weak var selectedItemDateLbl: UILabel!
     
     var fridge: Fridge!
     private var itemVM: ItemVM!
@@ -57,7 +61,6 @@ class ItemVC: UIViewController {
     
     @IBAction func backBtnPressed(_ sender: Any) {
         // TODO: Save data?
-        //self.dismiss(animated: false, completion: nil)
         performSegue(withIdentifier: "unwindToMain", sender: self)
     }
     
@@ -95,13 +98,17 @@ class ItemVC: UIViewController {
             if (self!.showingItemIndex == nil) {
                 self!.showingItemIndex = indexPath.row
                 self!.itemVM.selectItem(atIndexPath: indexPath)
-                self!.lockDetailView(hidden: false)
+                delay(for: 0.1, execute: {
+                    self!.lockDetailView(hidden: false)
+                })
             } else if (self!.showingItemIndex != indexPath.row) {
                 self!.lockDetailView(hidden: true)
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3, execute: {
+                delay(for: 0.3, execute: {
                     self!.itemVM.selectItem(atIndexPath: indexPath)
-                    self!.lockDetailView(hidden: false)
                     self!.showingItemIndex = indexPath.row
+                    delay(for: 0.1, execute: {
+                        self!.lockDetailView(hidden: false)
+                    })
                 })
             } else {
                 self!.lockDetailView(hidden: true)
@@ -117,6 +124,9 @@ class ItemVC: UIViewController {
                 if (selectedItem != nil) {
                     self.selectedItemNameLbl.text = selectedItem!.name!
                     // TODO: Add all detail
+                    self.selectedItemAmount.text = String(selectedItem!.amount)
+                    self.selectedItemExpireMsg.text = selectedItem!.getExpireMessage()
+                    self.selectedItemDateLbl.attributedText = selectedItem!.getAttributedDateString()
                 }
             }.disposed(by: disposeBag)
     }

@@ -414,7 +414,7 @@
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="o4a-MJ-NM4">
-                                                    <rect key="frame" x="100.5" y="30" width="174.5" height="64"/>
+                                                    <rect key="frame" x="100.5" y="39" width="174.5" height="64"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fridgeIcon" translatesAutoresizingMaskIntoConstraints="NO" id="AKx-sk-BH1">
                                                             <rect key="frame" x="0.0" y="7" width="50" height="50"/>
@@ -450,11 +450,48 @@
                                                         <constraint firstAttribute="height" constant="5" id="c93-5c-e7P"/>
                                                     </constraints>
                                                 </view>
+                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="glD-Sq-4Du">
+                                                    <rect key="frame" x="78" y="127" width="219" height="109.5"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V7d-Hz-fxr">
+                                                            <rect key="frame" x="0.0" y="36" width="32" height="38"/>
+                                                            <state key="normal" image="amountDecreaseBtn"/>
+                                                        </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hMP-45-osy">
+                                                            <rect key="frame" x="63" y="0.0" width="93" height="109.5"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="80"/>
+                                                            <color key="textColor" red="0.36470955610275269" green="0.3647010326385498" blue="0.36470270156860352" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="diz-Mf-PPt">
+                                                            <rect key="frame" x="187" y="36" width="32" height="38"/>
+                                                            <state key="normal" image="amountIncreaseBtn"/>
+                                                        </button>
+                                                    </subviews>
+                                                </stackView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zHR-ey-gha">
+                                                    <rect key="frame" x="0.0" y="259.5" width="375" height="16.5"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Expire on 21/11/18">
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.3647095561" green="0.36470103259999997" blue="0.36470270160000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                <font key="NSFont" size="12" name="AvenirNext-Regular"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="o4a-MJ-NM4" firstAttribute="top" secondItem="cZa-sh-Mpm" secondAttribute="bottom" constant="15" id="H7c-e9-7sO"/>
+                                                <constraint firstItem="glD-Sq-4Du" firstAttribute="centerX" secondItem="qZt-w7-8mF" secondAttribute="centerX" id="6KJ-Ay-a3g"/>
+                                                <constraint firstItem="zHR-ey-gha" firstAttribute="leading" secondItem="qZt-w7-8mF" secondAttribute="leading" id="6kN-8k-dtW"/>
+                                                <constraint firstAttribute="bottom" secondItem="zHR-ey-gha" secondAttribute="bottom" constant="24" id="AUY-4i-HvB"/>
+                                                <constraint firstItem="o4a-MJ-NM4" firstAttribute="top" secondItem="cZa-sh-Mpm" secondAttribute="bottom" constant="24" id="H7c-e9-7sO"/>
                                                 <constraint firstItem="cZa-sh-Mpm" firstAttribute="centerX" secondItem="qZt-w7-8mF" secondAttribute="centerX" id="Iap-4x-TXu"/>
                                                 <constraint firstItem="cZa-sh-Mpm" firstAttribute="top" secondItem="qZt-w7-8mF" secondAttribute="top" constant="10" id="K6J-4s-BIs"/>
+                                                <constraint firstAttribute="trailing" secondItem="zHR-ey-gha" secondAttribute="trailing" id="QDN-S3-1vG"/>
+                                                <constraint firstItem="glD-Sq-4Du" firstAttribute="top" secondItem="o4a-MJ-NM4" secondAttribute="bottom" constant="24" id="gfI-BE-ypy"/>
                                                 <constraint firstItem="o4a-MJ-NM4" firstAttribute="centerX" secondItem="qZt-w7-8mF" secondAttribute="centerX" id="obO-to-eei"/>
                                             </constraints>
                                         </view>
@@ -501,9 +538,13 @@
                         <outlet property="detailViewBottomConstraint" destination="gb6-i1-eX7" id="c85-eb-03G"/>
                         <outlet property="emptyView" destination="kaD-zd-PJh" id="KPI-1v-Kyc"/>
                         <outlet property="itemTableView" destination="gfH-D0-CJI" id="zZp-ta-Yxc"/>
+                        <outlet property="selectedItemAmount" destination="hMP-45-osy" id="elW-7y-kc6"/>
+                        <outlet property="selectedItemDateLbl" destination="zHR-ey-gha" id="xmr-te-54R"/>
+                        <outlet property="selectedItemDecreaseAmountBtn" destination="V7d-Hz-fxr" id="J78-hG-PwO"/>
                         <outlet property="selectedItemExpireMsg" destination="fqJ-jf-cVC" id="DDr-Yt-2T2"/>
                         <outlet property="selectedItemIcon" destination="AKx-sk-BH1" id="olu-I1-joN"/>
                         <outlet property="selectedItemNameLbl" destination="rex-P3-nR2" id="Fa8-O3-F0D"/>
+                        <outlet property="selectedtemIncreaseAmountBtn" destination="diz-Mf-PPt" id="T3b-D9-bSR"/>
                         <segue destination="52m-ce-B8a" kind="show" identifier="showAdd" customClass="SegueFromRight" customModule="SimpleFridge" customModuleProvider="target" id="JMQ-Bg-dhY"/>
                         <segue destination="OWt-TO-0lr" kind="unwind" identifier="unwindToMain" customClass="SegueFromRightUnwind" customModule="SimpleFridge" customModuleProvider="target" unwindAction="unwindToMainWithSegue:" id="zlZ-B3-Cic"/>
                     </connections>
@@ -802,6 +843,8 @@
     </scenes>
     <resources>
         <image name="addItemIcon" width="29" height="29"/>
+        <image name="amountDecreaseBtn" width="32" height="38"/>
+        <image name="amountIncreaseBtn" width="32" height="38"/>
         <image name="backIcon" width="17" height="29"/>
         <image name="fridgeIcon" width="26" height="36"/>
         <image name="plusIcon" width="17" height="17"/>

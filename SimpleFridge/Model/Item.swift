@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 extension Item {
     func getDayCountToExpireDate() -> Int {
@@ -29,6 +30,21 @@ extension Item {
             message = "Expire in \(dayCount) days"
         }
         return message
+    }
+    
+    func getAttributedDateString() -> NSAttributedString {
+        let mediumAttr = [ NSAttributedString.Key.font: UIFont.init(name: "AvenirNext-Medium", size: 12)! ] as [NSAttributedString.Key : Any]
+        let message = NSMutableAttributedString(string: "Added on ")
+        message.append(NSAttributedString(string: getDateString(forDate: self.addDate!), attributes: mediumAttr))
+        message.append(NSAttributedString(string: "\t\tWill expire on "))
+        message.append(NSAttributedString(string: getDateString(forDate: self.expireDate!), attributes: mediumAttr))
+        return message
+    }
+    
+    func getDateString(forDate date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yy"
+        return dateFormatter.string(from: date)
     }
     
 }
