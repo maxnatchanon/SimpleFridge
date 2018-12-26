@@ -12,7 +12,7 @@ import RxCocoa
 
 class AddVC: UIViewController {
     
-    // MARK:- Variable
+    // MARK: - Variable
     
     @IBOutlet weak var addBtn: UIButton!
     @IBOutlet weak var selectDateBtn: UIButton!
@@ -31,7 +31,7 @@ class AddVC: UIViewController {
     private let disposeBag = DisposeBag()
     
     
-    // MARK:- Main function
+    // MARK: - Main function
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +42,7 @@ class AddVC: UIViewController {
     
     
     
-    // MARK:- Button action
+    // MARK: - Button action
     
     /// Check if all data is valid then save
     /// If not, show error alert
@@ -84,7 +84,7 @@ class AddVC: UIViewController {
     
     
     
-    // MARK:- Subfunction
+    // MARK: - Subfunction
     
     private func setUpUI() {
         addBtn.layer.cornerRadius = 10

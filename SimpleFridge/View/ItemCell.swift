@@ -32,14 +32,9 @@ class ItemCell: UITableViewCell {
     func insertData(withItem item: Item) {
         itemIcon.image = UIImage.init(named: item.icon ?? "")
         itemNameLbl.text = item.name ?? ""
-        expireMsgLbl.text = getExpireMessage(forItem: item)
+        expireMsgLbl.text = item.getExpireMessage()
         amountLbl.text = String(item.amount)
         unitLbl.text = item.unit ?? ""
-    }
-    
-    private func getExpireMessage(forItem item: Item) -> String {
-        // TODO: Generate expire message
-        return ""
     }
 
 }

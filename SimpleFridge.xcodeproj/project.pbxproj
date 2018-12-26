@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0E67D05721CA06D90030A9F5 /* FridgeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E67D05621CA06D90030A9F5 /* FridgeCell.swift */; };
+		0EF9FAF421D3D7FD00C8A71C /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF9FAF321D3D7FD00C8A71C /* Item.swift */; };
 		2B8E60811369337C10A7B1DF /* Pods_SimpleFridgeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67723B82F6EF933712A90B45 /* Pods_SimpleFridgeUITests.framework */; };
 		A9E71AE1D14A1DF6930E2DFD /* Pods_SimpleFridgeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5984C8708E707EB25E3142E0 /* Pods_SimpleFridgeTests.framework */; };
 		AC8BE30C62F4E3ED3325991B /* Pods_SimpleFridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D9BAF4A6BEE46E17EC30EFB /* Pods_SimpleFridge.framework */; };
@@ -47,6 +48,7 @@
 
 /* Begin PBXFileReference section */
 		0E67D05621CA06D90030A9F5 /* FridgeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FridgeCell.swift; sourceTree = "<group>"; };
+		0EF9FAF321D3D7FD00C8A71C /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		18935D33A4615A2EB05DB99E /* Pods-SimpleFridge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleFridge.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleFridge/Pods-SimpleFridge.release.xcconfig"; sourceTree = "<group>"; };
 		467CA7BBBAC6D5916820F09C /* Pods-SimpleFridgeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleFridgeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleFridgeUITests/Pods-SimpleFridgeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		52D03B892D09D5C405AC8A07 /* Pods-SimpleFridgeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleFridgeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleFridgeTests/Pods-SimpleFridgeTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 		0E67D05321CA05EE0030A9F5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0EF9FAF321D3D7FD00C8A71C /* Item.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -467,6 +470,7 @@
 				0E67D05721CA06D90030A9F5 /* FridgeCell.swift in Sources */,
 				ED30BEEA21CD4DEE0033B3D0 /* ItemVM.swift in Sources */,
 				ED30BEE821CD248D0033B3D0 /* MainVM.swift in Sources */,
+				0EF9FAF421D3D7FD00C8A71C /* Item.swift in Sources */,
 				EDC431FC21CFEA7B0001B474 /* AddVC.swift in Sources */,
 				EDD0D77E21C7F4E2008B48A4 /* MainVC.swift in Sources */,
 				EDD0D78421C7F4E2008B48A4 /* SimpleFridge.xcdatamodeld in Sources */,

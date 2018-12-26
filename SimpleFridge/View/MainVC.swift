@@ -13,7 +13,7 @@ import RxCocoa
 
 class MainVC: UIViewController {
 
-    // MARK:- Variable
+    // MARK: - Variable
     
     @IBOutlet weak var fridgeTableView: UITableView!
     @IBOutlet weak var addFridgeView: UIView!
@@ -26,7 +26,7 @@ class MainVC: UIViewController {
     
     
     
-    // MARK:- Main function
+    // MARK: - Main function
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +49,7 @@ class MainVC: UIViewController {
     
     
 
-    // MARK:- Subfunction
+    // MARK: - Subfunction
     
     /// Add gesture recognizer for addFridgeView
     /// When tapped, call showAddFridgeAlert()

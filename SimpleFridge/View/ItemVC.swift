@@ -12,7 +12,7 @@ import RxCocoa
 
 class ItemVC: UIViewController {
     
-    // MARK:- Variable
+    // MARK: - Variable
     
     @IBOutlet weak var itemTableView: UITableView!
     @IBOutlet weak var emptyView: UIView!
@@ -30,7 +30,7 @@ class ItemVC: UIViewController {
     
     
     
-    // MARK:- Main function
+    // MARK: - Main function
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,7 +63,7 @@ class ItemVC: UIViewController {
     
     
     
-    // MARK:- Subfunction
+    // MARK: - Subfunction
     
     /// Bind emptyView to itemList.count
     /// if there is no item, show emptyView

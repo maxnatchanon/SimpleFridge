@@ -59,7 +59,7 @@ class AddVM {
         newItem.name = itemName.value
         newItem.amount = Int32(amountString.value) ?? 1
         newItem.unit = unit.value.lowercased().capitalized
-        newItem.expireDate = expireDate.value
+        newItem.expireDate = Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: expireDate.value)
         newItem.addDate = Date()
         newItem.icon = icon.value
         newItem.fridge = fridge
