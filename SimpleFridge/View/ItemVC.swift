@@ -20,6 +20,7 @@ class ItemVC: UIViewController {
     @IBOutlet weak var detailViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var itemTableViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var fridgeNameLbl: UILabel!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     @IBOutlet weak var selectedItemIcon: UIImageView!
     @IBOutlet weak var selectedItemNameLbl: UILabel!
@@ -43,13 +44,14 @@ class ItemVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         itemVM = ItemVM(withFridge: fridge)
         setUpUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         itemVM.fetchItemData()
+        itemVM.refreshFilteredList()
+        searchBar.text = ""
     }
     
     func setUpUI() {
@@ -59,8 +61,10 @@ class ItemVC: UIViewController {
         bindTableView()
         bindDetailView()
         setUpDetailView()
+        setUpSearchBar()
     }
     
+    /// Button function
     @IBAction func addBtnPressed(_ sender: Any) {
         performSegue(withIdentifier: SegueIdentifier.showAdd, sender: fridge)
     }
@@ -88,6 +92,9 @@ class ItemVC: UIViewController {
             self.showingItemIndex = nil
             self.showingCell = nil
             self.itemVM.deleteSelectedItem()
+            self.itemVM.filteredItemList.accept(self.itemVM.itemList.filter({ (item) -> Bool in
+                item.name!.hasPrefix(self.searchBar.text ?? "")
+            }))
         }
     }
     
@@ -98,13 +105,13 @@ class ItemVC: UIViewController {
     /// Bind emptyView to itemList.count
     /// if there is no item, show emptyView
     private func bindEmptyView() {
-        itemVM.itemList.asObservable().filter { (list) -> Bool in
+        itemVM.filteredItemList.asObservable().filter { (list) -> Bool in
             list.count == 0
             }.bind { (list) in
                 self.emptyView.alpha = 1
             }.disposed(by: disposeBag)
         
-        itemVM.itemList.asObservable().filter { (list) -> Bool in
+        itemVM.filteredItemList.asObservable().filter { (list) -> Bool in
             list.count > 0
             }.bind { (list) in
                 self.emptyView.alpha = 0
@@ -114,7 +121,7 @@ class ItemVC: UIViewController {
     /// Bind item table view data source to itemList in itemVM
     /// Add row select action, show item detail
     private func bindTableView() {
-        itemVM.itemList.asObservable()
+        itemVM.filteredItemList.asObservable()
             .bind(to: itemTableView.rx.items(cellIdentifier: ItemCell.identifier, cellType: ItemCell.self)) {
                 (row, item, cell) in
                 cell.insertData(withItem: item)
@@ -212,6 +219,16 @@ class ItemVC: UIViewController {
             }
         }
         
+    }
+    
+    /// Bind search bar text and filtered item list
+    private func setUpSearchBar() {
+        searchBar.rx.text.orEmpty
+            .subscribe(onNext: {query in
+                self.itemVM.filteredItemList.accept(self.itemVM.itemList.filter({ (item) -> Bool in
+                    item.name!.hasPrefix(query)
+                }))
+            }).disposed(by: disposeBag)
     }
     
     /// Prepare for segue

@@ -15,13 +15,15 @@ import RxSwift
 class ItemVM {
     
     var fridge: Fridge
-    var itemList: BehaviorRelay<[Item]>
+    var itemList: [Item]
+    var filteredItemList: BehaviorRelay<[Item]>
     var selectedItem: BehaviorRelay<Item?>
     private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     init(withFridge fridge: Fridge) {
         self.fridge = fridge
-        itemList = BehaviorRelay(value: [])
+        itemList = []
+        filteredItemList = BehaviorRelay(value: [])
         selectedItem = BehaviorRelay(value: nil)
     }
     
@@ -32,14 +34,18 @@ class ItemVM {
         request.sortDescriptors = [sort]
         do {
             let data = try context.fetch(request) as! [Item]
-            itemList.accept(data)
+            itemList = data
         } catch {
             print("Fetching item failed")
         }
     }
     
+    func refreshFilteredList() {
+        filteredItemList.accept(itemList)
+    }
+    
     func selectItem(atIndexPath indexPath: IndexPath) {
-        selectedItem.accept(itemList.value[indexPath.row])
+        selectedItem.accept(filteredItemList.value[indexPath.row])
     }
     
     func saveData() {
