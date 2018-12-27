@@ -18,6 +18,7 @@ class ItemVC: UIViewController {
     @IBOutlet weak var emptyView: UIView!
     @IBOutlet weak var detailView: UIView!
     @IBOutlet weak var detailViewBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var itemTableViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var fridgeNameLbl: UILabel!
     
     @IBOutlet weak var selectedItemIcon: UIImageView!
@@ -82,7 +83,12 @@ class ItemVC: UIViewController {
     }
     
     @IBAction func deleteBtnPressed(_ sender: Any) {
-        // TODO: Delete item
+        lockDetailView(hidden: true)
+        delay(for: 0.3) {
+            self.showingItemIndex = nil
+            self.showingCell = nil
+            self.itemVM.deleteSelectedItem()
+        }
     }
     
     
@@ -169,9 +175,12 @@ class ItemVC: UIViewController {
         switch sender.state {
         case .began, .changed:
             let translation = sender.translation(in: self.view)
-            var newConst = detailViewBottomConstraint.constant - translation.y
-            newConst = (newConst > 0) ? 0 : newConst
-            detailViewBottomConstraint.constant = newConst
+            var detailViewConst = detailViewBottomConstraint.constant - translation.y
+            detailViewConst = (detailViewConst > 0) ? 0 : detailViewConst
+            detailViewBottomConstraint.constant = detailViewConst
+            var tableViewConst = itemTableViewBottomConstraint.constant - translation.y
+            tableViewConst = (tableViewConst > 350) ? 350 : tableViewConst
+            itemTableViewBottomConstraint.constant = tableViewConst
             sender.setTranslation(CGPoint.zero, in: self.view)
         default:
             if (detailViewBottomConstraint.constant > -30) {
@@ -190,13 +199,17 @@ class ItemVC: UIViewController {
         if (hidden) {
             UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseInOut, animations: {
                 self.detailViewBottomConstraint.constant = -350
+                self.itemTableViewBottomConstraint.constant = 0
                 self.view.layoutIfNeeded()
             })
         } else {
             UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseInOut, animations: {
                 self.detailViewBottomConstraint.constant = (showDelete) ? 0 : -50
+                self.itemTableViewBottomConstraint.constant = (showDelete) ? 350 : 300
                 self.view.layoutIfNeeded()
-            })
+            }) { (_) in
+                self.itemTableView.selectRow(at: IndexPath.init(row: self.showingItemIndex!, section: 0), animated: true, scrollPosition: .middle)
+            }
         }
         
     }

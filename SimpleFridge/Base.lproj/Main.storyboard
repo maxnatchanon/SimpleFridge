@@ -562,6 +562,7 @@
                         <outlet property="emptyView" destination="kaD-zd-PJh" id="KPI-1v-Kyc"/>
                         <outlet property="fridgeNameLbl" destination="HUt-Ce-XfH" id="9BO-ZP-GCu"/>
                         <outlet property="itemTableView" destination="gfH-D0-CJI" id="zZp-ta-Yxc"/>
+                        <outlet property="itemTableViewBottomConstraint" destination="l5e-XY-GFk" id="1xy-T6-cy7"/>
                         <outlet property="selectedItemAmount" destination="hMP-45-osy" id="elW-7y-kc6"/>
                         <outlet property="selectedItemDateLbl" destination="zHR-ey-gha" id="xmr-te-54R"/>
                         <outlet property="selectedItemDecreaseAmountBtn" destination="V7d-Hz-fxr" id="J78-hG-PwO"/>

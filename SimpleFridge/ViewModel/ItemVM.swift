@@ -50,4 +50,11 @@ class ItemVM {
         }
     }
     
+    func deleteSelectedItem() {
+        context.delete(selectedItem.value!)
+        selectedItem.accept(nil)
+        saveData()
+        fetchItemData()
+    }
+    
 }
