@@ -63,7 +63,7 @@ class AddVC: UIViewController {
     @IBAction func backBtnPressed(_ sender: Any) {
         let alert = UIAlertController(title: "Cancel", message: "Cancel adding new item?", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Confirm", style: .default, handler: { (alertAction) in
-            self.dismiss(animated: true, completion: nil)
+            self.performSegue(withIdentifier: "unwindToItem", sender: nil)
         }))
         alert.addAction(UIAlertAction(title: "Back", style: .cancel, handler: nil))
         present(alert, animated: true, completion: nil)

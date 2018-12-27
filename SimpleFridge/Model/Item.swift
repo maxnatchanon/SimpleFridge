@@ -41,7 +41,7 @@ extension Item {
         return message
     }
     
-    func getDateString(forDate date: Date) -> String {
+    private func getDateString(forDate date: Date) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MM/yy"
         return dateFormatter.string(from: date)
