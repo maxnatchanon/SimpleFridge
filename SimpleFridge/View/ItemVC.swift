@@ -76,7 +76,7 @@ class ItemVC: UIViewController {
     
     @IBAction func decreaseAmountBtnPressed(_ sender: Any) {
         if (itemVM.selectedItem.value!.amount == 1) {
-            showZeroAmountAlert()
+            deleteShowingItem(withAlertMessage: "The amount has reached zero.\nDo you want to delete this item?")
             return
         }
         itemVM.selectedItem.value!.amount -= 1
@@ -97,7 +97,7 @@ class ItemVC: UIViewController {
     }
     
     @IBAction func deleteBtnPressed(_ sender: Any) {
-        deleteShowingItem()
+        deleteShowingItem(withAlertMessage: "Do you want to delete this item?")
     }
     
     
@@ -233,22 +233,18 @@ class ItemVC: UIViewController {
             }).disposed(by: disposeBag)
     }
     
-    private func deleteShowingItem() {
-        lockDetailView(hidden: true)
-        delay(for: 0.3) {
-            self.showingItemIndex = nil
-            self.showingCell = nil
-            self.itemVM.deleteSelectedItem()
-            self.itemVM.filteredItemList.accept(self.itemVM.itemList.filter({ (item) -> Bool in
-                item.name!.hasPrefix(self.searchBar.text ?? "")
-            }))
-        }
-    }
-    
-    private func showZeroAmountAlert() {
-        let alert = UIAlertController(title: "Delete item", message: "The amount has reached zero.\nDo you want to delete this item?", preferredStyle: .alert)
+    private func deleteShowingItem(withAlertMessage message: String) {
+        let alert = UIAlertController(title: "Delete item", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { (_) in
-            self.deleteShowingItem()
+            self.lockDetailView(hidden: true)
+            delay(for: 0.3) {
+                self.showingItemIndex = nil
+                self.showingCell = nil
+                self.itemVM.deleteSelectedItem()
+                self.itemVM.filteredItemList.accept(self.itemVM.itemList.filter({ (item) -> Bool in
+                    item.name!.hasPrefix(self.searchBar.text ?? "")
+                }))
+            }
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
