@@ -75,27 +75,29 @@ class ItemVC: UIViewController {
     }
     
     @IBAction func decreaseAmountBtnPressed(_ sender: Any) {
+        if (itemVM.selectedItem.value!.amount == 1) {
+            showZeroAmountAlert()
+            return
+        }
         itemVM.selectedItem.value!.amount -= 1
         selectedItemAmount.text = String(itemVM.selectedItem.value!.amount)
         showingCell?.amountLbl.text = String(itemVM.selectedItem.value!.amount)
+        if (itemVM.selectedItem.value!.amount == 1) {
+            showingCell!.unitForOnlyOne()
+        }
     }
     
     @IBAction func increaseAmountBtnPressed(_ sender: Any) {
         itemVM.selectedItem.value!.amount += 1
         selectedItemAmount.text = String(itemVM.selectedItem.value!.amount)
         showingCell?.amountLbl.text = String(itemVM.selectedItem.value!.amount)
+        if (itemVM.selectedItem.value!.amount == 2) {
+            showingCell!.unitForMoreThanOne()
+        }
     }
     
     @IBAction func deleteBtnPressed(_ sender: Any) {
-        lockDetailView(hidden: true)
-        delay(for: 0.3) {
-            self.showingItemIndex = nil
-            self.showingCell = nil
-            self.itemVM.deleteSelectedItem()
-            self.itemVM.filteredItemList.accept(self.itemVM.itemList.filter({ (item) -> Bool in
-                item.name!.hasPrefix(self.searchBar.text ?? "")
-            }))
-        }
+        deleteShowingItem()
     }
     
     
@@ -229,6 +231,27 @@ class ItemVC: UIViewController {
                     item.name!.hasPrefix(query)
                 }))
             }).disposed(by: disposeBag)
+    }
+    
+    private func deleteShowingItem() {
+        lockDetailView(hidden: true)
+        delay(for: 0.3) {
+            self.showingItemIndex = nil
+            self.showingCell = nil
+            self.itemVM.deleteSelectedItem()
+            self.itemVM.filteredItemList.accept(self.itemVM.itemList.filter({ (item) -> Bool in
+                item.name!.hasPrefix(self.searchBar.text ?? "")
+            }))
+        }
+    }
+    
+    private func showZeroAmountAlert() {
+        let alert = UIAlertController(title: "Delete item", message: "The amount has reached zero.\nDo you want to delete this item?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { (_) in
+            self.deleteShowingItem()
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
     }
 
 }

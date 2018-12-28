@@ -35,6 +35,9 @@ class ItemCell: UITableViewCell {
         expireMsgLbl.text = item.getExpireMessage()
         amountLbl.text = String(item.amount)
         unitLbl.text = item.unit ?? ""
+        if (unitLbl.text != "" && item.amount > 1) {
+            unitForMoreThanOne()
+        }
         
         let dayCount = item.getDayCountToExpireDate()
         if (dayCount < 0) {
@@ -42,6 +45,15 @@ class ItemCell: UITableViewCell {
         } else if (item.getDayCountToExpireDate() <= 1) {
             containerView.backgroundColor = UIColor.init(red: 255, green: 0, blue: 0, alpha: 0.09)
         }
+    }
+    
+    func unitForMoreThanOne() {
+        unitLbl.text! += "s"
+    }
+    
+    func unitForOnlyOne() {
+        let secondLastIndex = unitLbl.text!.index(unitLbl.text!.endIndex, offsetBy: -1)
+        unitLbl.text = String(unitLbl.text![unitLbl.text!.startIndex..<secondLastIndex])
     }
 
 }
