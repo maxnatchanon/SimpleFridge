@@ -230,6 +230,10 @@ class ItemVC: UIViewController {
                 }))
             }).disposed(by: disposeBag)
     }
+
+}
+
+extension ItemVC {
     
     /// Prepare for segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

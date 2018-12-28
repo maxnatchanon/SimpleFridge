@@ -109,13 +109,17 @@ class MainVC: UIViewController {
                 }
             }).disposed(by: disposeBag)
     }
+
+}
+
+extension MainVC {
     
     /// Prepare for segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let identifierString = segue.identifier,
             let identifier = SegueIdentifier(rawValue: identifierString) else {
-            assertionFailure("Getting segue identifier failed")
-            return
+                assertionFailure("Getting segue identifier failed")
+                return
         }
         
         switch identifier {
