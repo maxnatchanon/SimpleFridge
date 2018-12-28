@@ -32,7 +32,7 @@ class AddVM {
         amountString = BehaviorRelay(value: "")
         unit = BehaviorRelay(value: "")
         expireDate = BehaviorRelay(value: Date())
-        icon = BehaviorRelay(value: "")
+        icon = BehaviorRelay(value: "icon29")
     }
     
     func checkData() -> [Int] {

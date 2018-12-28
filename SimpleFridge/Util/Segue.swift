@@ -12,6 +12,7 @@ import UIKit
 enum SegueIdentifier: String {
     case showItem = "showItem"
     case showAdd = "showAdd"
+    case showIcon = "showIcon"
 }
 
 extension UIViewController {

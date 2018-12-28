@@ -93,6 +93,8 @@ class AddVC: UIViewController {
         datePickerPopUp.layer.cornerRadius = 10
         datePickerPopUp.layer.masksToBounds = true
         
+        setUpIconView()
+        
         itemNameTextfield.rx.text.orEmpty.asObservable()
             .bind(to: addVM.itemName).disposed(by: disposeBag)
         
@@ -111,6 +113,43 @@ class AddVC: UIViewController {
             dateFormatter.dateFormat = "dd/MM/yyyy"
             self.dateTextfield.text = dateFormatter.string(from: date)
             }.disposed(by: disposeBag)
+        
+        addVM.icon.asObservable().bind { (icon) in
+                self.iconImage.image = UIImage.init(named: icon)
+            }.disposed(by: disposeBag)
     }
 
+    private func setUpIconView() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.showIconSelectScreen))
+        iconView.addGestureRecognizer(tapGesture)
+        iconView.isUserInteractionEnabled = true
+    }
+    
+    @objc private func showIconSelectScreen() {
+        performSegue(withIdentifier: SegueIdentifier.showIcon, sender: nil)
+    }
+    
+}
+
+extension AddVC: DataPassable {
+    func pass(data: String) {
+        addVM.icon.accept(data)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let identifierString = segue.identifier,
+            let identifier = SegueIdentifier(rawValue: identifierString) else {
+                return
+        }
+        
+        switch identifier {
+        case .showIcon:
+            if let iconVC = segue.destination as? IconVC {
+                iconVC.delegate = self
+            }
+        default:
+            return
+        }
+    }
+    
 }

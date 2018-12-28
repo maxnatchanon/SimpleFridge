@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0E67D05721CA06D90030A9F5 /* FridgeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E67D05621CA06D90030A9F5 /* FridgeCell.swift */; };
+		0E7CF92221D665B70009F591 /* DataPassable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7CF92121D665B70009F591 /* DataPassable.swift */; };
+		0EA2E0C421D5441B00F08BA9 /* IconVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA2E0C321D5441B00F08BA9 /* IconVC.swift */; };
+		0EA2E0C621D545DB00F08BA9 /* IconCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA2E0C521D545DB00F08BA9 /* IconCell.swift */; };
 		0EF9FAF421D3D7FD00C8A71C /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF9FAF321D3D7FD00C8A71C /* Item.swift */; };
 		0EF9FAF621D3E7CB00C8A71C /* Delay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF9FAF521D3E7CB00C8A71C /* Delay.swift */; };
 		2B8E60811369337C10A7B1DF /* Pods_SimpleFridgeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67723B82F6EF933712A90B45 /* Pods_SimpleFridgeUITests.framework */; };
@@ -49,6 +52,9 @@
 
 /* Begin PBXFileReference section */
 		0E67D05621CA06D90030A9F5 /* FridgeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FridgeCell.swift; sourceTree = "<group>"; };
+		0E7CF92121D665B70009F591 /* DataPassable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPassable.swift; sourceTree = "<group>"; };
+		0EA2E0C321D5441B00F08BA9 /* IconVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconVC.swift; sourceTree = "<group>"; };
+		0EA2E0C521D545DB00F08BA9 /* IconCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconCell.swift; sourceTree = "<group>"; };
 		0EF9FAF321D3D7FD00C8A71C /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		0EF9FAF521D3E7CB00C8A71C /* Delay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delay.swift; sourceTree = "<group>"; };
 		18935D33A4615A2EB05DB99E /* Pods-SimpleFridge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleFridge.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleFridge/Pods-SimpleFridge.release.xcconfig"; sourceTree = "<group>"; };
@@ -117,8 +123,10 @@
 				EDD0D77D21C7F4E2008B48A4 /* MainVC.swift */,
 				EDBE894521CE797C006A91D3 /* ItemVC.swift */,
 				EDC431FB21CFEA7B0001B474 /* AddVC.swift */,
+				0EA2E0C321D5441B00F08BA9 /* IconVC.swift */,
 				0E67D05621CA06D90030A9F5 /* FridgeCell.swift */,
 				EDBE894721CE7F18006A91D3 /* ItemCell.swift */,
+				0EA2E0C521D545DB00F08BA9 /* IconCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -136,6 +144,7 @@
 			children = (
 				EDBE894921CE8F0C006A91D3 /* Segue.swift */,
 				0EF9FAF521D3E7CB00C8A71C /* Delay.swift */,
+				0E7CF92121D665B70009F591 /* DataPassable.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -471,14 +480,17 @@
 			files = (
 				EDBE894821CE7F18006A91D3 /* ItemCell.swift in Sources */,
 				0E67D05721CA06D90030A9F5 /* FridgeCell.swift in Sources */,
+				0E7CF92221D665B70009F591 /* DataPassable.swift in Sources */,
 				ED30BEEA21CD4DEE0033B3D0 /* ItemVM.swift in Sources */,
 				ED30BEE821CD248D0033B3D0 /* MainVM.swift in Sources */,
 				0EF9FAF421D3D7FD00C8A71C /* Item.swift in Sources */,
 				EDC431FC21CFEA7B0001B474 /* AddVC.swift in Sources */,
 				EDD0D77E21C7F4E2008B48A4 /* MainVC.swift in Sources */,
+				0EA2E0C421D5441B00F08BA9 /* IconVC.swift in Sources */,
 				EDD0D78421C7F4E2008B48A4 /* SimpleFridge.xcdatamodeld in Sources */,
 				EDBE894621CE797C006A91D3 /* ItemVC.swift in Sources */,
 				EDBE894A21CE8F0C006A91D3 /* Segue.swift in Sources */,
+				0EA2E0C621D545DB00F08BA9 /* IconCell.swift in Sources */,
 				EDC431FE21CFF1E60001B474 /* AddVM.swift in Sources */,
 				EDD0D77C21C7F4E2008B48A4 /* AppDelegate.swift in Sources */,
 				0EF9FAF621D3E7CB00C8A71C /* Delay.swift in Sources */,
