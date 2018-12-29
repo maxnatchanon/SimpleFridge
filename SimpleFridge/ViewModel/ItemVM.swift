@@ -40,8 +40,10 @@ class ItemVM {
         }
     }
     
-    func refreshFilteredList() {
-        filteredItemList.accept(itemList)
+    func refreshFilteredList(withQuery query: String = "") {
+        filteredItemList.accept(itemList.filter({ (item) -> Bool in
+            item.name!.hasPrefix(query)
+        }))
     }
     
     func selectItem(atIndexPath indexPath: IndexPath) {
@@ -64,9 +66,19 @@ class ItemVM {
         fetchItemData()
     }
     
-    func renameSelectedItem(withName name: String) {
-        // TODO: Rename item
-        print("Renamed item to \(name).")
+    func editSelectedItemName(withName name: String) {
+        selectedItem.value!.name = name
+        saveData()
+    }
+    
+    func editSelectedItemAmount(withAmount amount: Int32) {
+        selectedItem.value!.amount = amount
+        saveData()
+    }
+    
+    func editSelectedItemExpireDate(withDate date: Date) {
+        selectedItem.value!.expireDate = date
+        saveData()
     }
     
 }

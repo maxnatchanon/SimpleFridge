@@ -24,8 +24,8 @@ class ItemVC: UIViewController {
     
     @IBOutlet weak var selectedItemIcon: UIImageView!
     @IBOutlet weak var selectedItemNameLbl: UILabel!
-    @IBOutlet weak var selectedItemExpireMsg: UILabel!
-    @IBOutlet weak var selectedItemAmount: UILabel!
+    @IBOutlet weak var selectedItemExpireMsgLbl: UILabel!
+    @IBOutlet weak var selectedItemAmountLbl: UILabel!
     @IBOutlet weak var selectedItemDecreaseAmountBtn: UIButton!
     @IBOutlet weak var selectedtemIncreaseAmountBtn: UIButton!
     @IBOutlet weak var selectedItemDateLbl: UILabel!
@@ -81,7 +81,7 @@ class ItemVC: UIViewController {
             return
         }
         itemVM.selectedItem.value!.amount -= 1
-        selectedItemAmount.text = String(itemVM.selectedItem.value!.amount)
+        selectedItemAmountLbl.text = String(itemVM.selectedItem.value!.amount)
         showingCell?.amountLbl.text = String(itemVM.selectedItem.value!.amount)
         if (itemVM.selectedItem.value!.amount == 1) {
             showingCell!.unitForOnlyOne()
@@ -90,7 +90,7 @@ class ItemVC: UIViewController {
     
     @IBAction func increaseAmountBtnPressed(_ sender: Any) {
         itemVM.selectedItem.value!.amount += 1
-        selectedItemAmount.text = String(itemVM.selectedItem.value!.amount)
+        selectedItemAmountLbl.text = String(itemVM.selectedItem.value!.amount)
         showingCell?.amountLbl.text = String(itemVM.selectedItem.value!.amount)
         if (itemVM.selectedItem.value!.amount == 2) {
             showingCell!.unitForMoreThanOne()
@@ -166,8 +166,8 @@ class ItemVC: UIViewController {
         itemVM.selectedItem.asObservable().bind { (selectedItem) in
                 if (selectedItem != nil) {
                     self.selectedItemNameLbl.text = selectedItem!.name!
-                    self.selectedItemAmount.text = String(selectedItem!.amount)
-                    self.selectedItemExpireMsg.text = selectedItem!.getExpireMessage()
+                    self.selectedItemAmountLbl.text = String(selectedItem!.amount)
+                    self.selectedItemExpireMsgLbl.text = selectedItem!.getExpireMessage()
                     self.selectedItemDateLbl.attributedText = selectedItem!.getAttributedDateString()
                 }
             }.disposed(by: disposeBag)
@@ -253,12 +253,25 @@ class ItemVC: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
+    /// Refresh detail view with data from itemVM.selectedItem
+    private func refreshDetailView() {
+        selectedItemNameLbl.text = itemVM.selectedItem.value!.name!
+        selectedItemAmountLbl.text = String(itemVM.selectedItem.value!.amount)
+        selectedItemExpireMsgLbl.text = itemVM.selectedItem.value!.getExpireMessage()
+        selectedItemDateLbl.attributedText = itemVM.selectedItem.value!.getAttributedDateString()
+    }
+    
+    /// Set up gesture recognizer for item editing in detail view
     private func setUpEditFunction() {
         selectedItemNameLbl.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.editItemName)))
         selectedItemNameLbl.isUserInteractionEnabled = true
+        selectedItemAmountLbl.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.editItemAmount)))
+        selectedItemAmountLbl.isUserInteractionEnabled = true
+        selectedItemDateLbl.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.editItemExpireDate)))
+        selectedItemDateLbl.isUserInteractionEnabled = true
     }
     
-    
+    /// Edit item functions
     @objc private func editItemName() {
         let alert = UIAlertController(title: "Edit item name", message: "Enter new item name.", preferredStyle: .alert)
         alert.addTextField { (textfield) in
@@ -268,7 +281,9 @@ class ItemVC: UIViewController {
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (_) in
             if (alert.textFields![0].text != "") {
-                self.itemVM.renameSelectedItem(withName: alert.textFields![0].text!)
+                self.itemVM.editSelectedItemName(withName: alert.textFields![0].text!)
+                self.showingCell?.insertData(withItem: self.itemVM.selectedItem.value!)
+                self.refreshDetailView()
             } else {
                 let emptyNameAlert = UIAlertController(title: "Error", message: "Item name cannot be empty.", preferredStyle: .alert)
                 emptyNameAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
@@ -276,6 +291,32 @@ class ItemVC: UIViewController {
             }
         }))
         present(alert, animated: true, completion: nil)
+    }
+    
+    @objc private func editItemAmount() {
+        let alert = UIAlertController(title: "Edit item amount", message: "Enter new item amount.", preferredStyle: .alert)
+        alert.addTextField { (textfield) in
+            textfield.textAlignment = .center
+            textfield.placeholder = String(self.itemVM.selectedItem.value!.amount)
+            textfield.keyboardType = .numberPad
+        }
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (_) in
+            if (alert.textFields![0].text != "") {
+                self.itemVM.editSelectedItemAmount(withAmount: Int32(alert.textFields![0].text!)!)
+                self.showingCell?.insertData(withItem: self.itemVM.selectedItem.value!)
+                self.refreshDetailView()
+            } else {
+                let emptyNameAlert = UIAlertController(title: "Error", message: "Item amount cannot be empty.", preferredStyle: .alert)
+                emptyNameAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(emptyNameAlert, animated: true, completion: nil)
+            }
+        }))
+        present(alert, animated: true, completion: nil)
+    }
+    
+    @objc private func editItemExpireDate() {
+        // TODO: Edit item expire date. Show date picker?
     }
     
 }

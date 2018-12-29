@@ -574,10 +574,10 @@
                         <outlet property="itemTableView" destination="gfH-D0-CJI" id="zZp-ta-Yxc"/>
                         <outlet property="itemTableViewBottomConstraint" destination="l5e-XY-GFk" id="1xy-T6-cy7"/>
                         <outlet property="searchBar" destination="RYA-x4-YxK" id="xhf-wD-yVe"/>
-                        <outlet property="selectedItemAmount" destination="hMP-45-osy" id="elW-7y-kc6"/>
+                        <outlet property="selectedItemAmountLbl" destination="hMP-45-osy" id="taf-Mc-CWe"/>
                         <outlet property="selectedItemDateLbl" destination="zHR-ey-gha" id="xmr-te-54R"/>
                         <outlet property="selectedItemDecreaseAmountBtn" destination="V7d-Hz-fxr" id="J78-hG-PwO"/>
-                        <outlet property="selectedItemExpireMsg" destination="fqJ-jf-cVC" id="DDr-Yt-2T2"/>
+                        <outlet property="selectedItemExpireMsgLbl" destination="fqJ-jf-cVC" id="7BH-bi-YdO"/>
                         <outlet property="selectedItemIcon" destination="AKx-sk-BH1" id="olu-I1-joN"/>
                         <outlet property="selectedItemNameLbl" destination="rex-P3-nR2" id="Fa8-O3-F0D"/>
                         <outlet property="selectedtemIncreaseAmountBtn" destination="diz-Mf-PPt" id="T3b-D9-bSR"/>
