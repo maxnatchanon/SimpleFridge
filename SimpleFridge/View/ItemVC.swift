@@ -62,6 +62,7 @@ class ItemVC: UIViewController {
         bindDetailView()
         setUpDetailView()
         setUpSearchBar()
+        setUpEditFunction()
     }
     
     /// Button function
@@ -233,6 +234,8 @@ class ItemVC: UIViewController {
             }).disposed(by: disposeBag)
     }
     
+    /// Show delete confirmation alert
+    /// If user tap confirm, delete showing item, save then fetch data again
     private func deleteShowingItem(withAlertMessage message: String) {
         let alert = UIAlertController(title: "Delete item", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { (_) in
@@ -249,7 +252,32 @@ class ItemVC: UIViewController {
         alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
     }
-
+    
+    private func setUpEditFunction() {
+        selectedItemNameLbl.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.editItemName)))
+        selectedItemNameLbl.isUserInteractionEnabled = true
+    }
+    
+    
+    @objc private func editItemName() {
+        let alert = UIAlertController(title: "Edit item name", message: "Enter new item name.", preferredStyle: .alert)
+        alert.addTextField { (textfield) in
+            textfield.textAlignment = .center
+            textfield.placeholder = self.itemVM.selectedItem.value!.name!
+        }
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (_) in
+            if (alert.textFields![0].text != "") {
+                self.itemVM.renameSelectedItem(withName: alert.textFields![0].text!)
+            } else {
+                let emptyNameAlert = UIAlertController(title: "Error", message: "Item name cannot be empty.", preferredStyle: .alert)
+                emptyNameAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(emptyNameAlert, animated: true, completion: nil)
+            }
+        }))
+        present(alert, animated: true, completion: nil)
+    }
+    
 }
 
 extension ItemVC {

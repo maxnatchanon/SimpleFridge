@@ -58,9 +58,15 @@ class ItemVM {
     
     func deleteSelectedItem() {
         context.delete(selectedItem.value!)
+        fridge.itemCount -= 1
         selectedItem.accept(nil)
         saveData()
         fetchItemData()
+    }
+    
+    func renameSelectedItem(withName name: String) {
+        // TODO: Rename item
+        print("Renamed item to \(name).")
     }
     
 }
