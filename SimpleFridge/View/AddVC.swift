@@ -22,9 +22,7 @@ class AddVC: UIViewController {
     @IBOutlet weak var itemNameTextfield: UITextField!
     @IBOutlet weak var amountTextfield: UITextField!
     @IBOutlet weak var unitTextfield: UITextField!
-    @IBOutlet weak var datePickerView: UIView!
-    @IBOutlet weak var datePickerPopUp: UIView!
-    @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var datePickerView: DatePickerView!
     
     var fridge: Fridge!
     var addVM: AddVM!
@@ -75,13 +73,6 @@ class AddVC: UIViewController {
         }
     }
     
-    @IBAction func datePickerBtnPressed(_ sender: Any) {
-        addVM.expireDate.accept(datePicker.date)
-        UIView.animate(withDuration: 0.3) {
-            self.datePickerView.alpha = 0
-        }
-    }
-    
     
     
     // MARK: - Subfunction
@@ -89,11 +80,9 @@ class AddVC: UIViewController {
     private func setUpUI() {
         addBtn.layer.cornerRadius = 10
         dateTextfield.isEnabled = false
-        datePickerView.alpha = 0
-        datePickerPopUp.layer.cornerRadius = 10
-        datePickerPopUp.layer.masksToBounds = true
         
         setUpIconView()
+        setUpDatePickerView()
         
         itemNameTextfield.rx.text.orEmpty.asObservable()
             .bind(to: addVM.itemName).disposed(by: disposeBag)
@@ -123,6 +112,16 @@ class AddVC: UIViewController {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.showIconSelectScreen))
         iconView.addGestureRecognizer(tapGesture)
         iconView.isUserInteractionEnabled = true
+    }
+    
+    private func setUpDatePickerView() {
+        datePickerView.alpha = 0
+        datePickerView.btnFunction = { [weak self] () in
+            self?.addVM.expireDate.accept((self?.datePickerView.selectedDate)!)
+            UIView.animate(withDuration: 0.3) {
+                self?.datePickerView.alpha = 0
+            }
+        }
     }
     
     @objc private func showIconSelectScreen() {

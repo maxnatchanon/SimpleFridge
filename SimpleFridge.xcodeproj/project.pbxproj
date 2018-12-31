@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E2E4E0821DA8D6400D3A526 /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2E4E0621DA8D6400D3A526 /* DatePickerView.swift */; };
+		0E2E4E0921DA8D6400D3A526 /* DatePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E2E4E0721DA8D6400D3A526 /* DatePickerView.xib */; };
 		0E67D05721CA06D90030A9F5 /* FridgeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E67D05621CA06D90030A9F5 /* FridgeCell.swift */; };
 		0E7CF92221D665B70009F591 /* DataPassable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7CF92121D665B70009F591 /* DataPassable.swift */; };
 		0EA2E0C421D5441B00F08BA9 /* IconVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA2E0C321D5441B00F08BA9 /* IconVC.swift */; };
@@ -51,6 +53,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E2E4E0621DA8D6400D3A526 /* DatePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
+		0E2E4E0721DA8D6400D3A526 /* DatePickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DatePickerView.xib; sourceTree = "<group>"; };
 		0E67D05621CA06D90030A9F5 /* FridgeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FridgeCell.swift; sourceTree = "<group>"; };
 		0E7CF92121D665B70009F591 /* DataPassable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPassable.swift; sourceTree = "<group>"; };
 		0EA2E0C321D5441B00F08BA9 /* IconVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconVC.swift; sourceTree = "<group>"; };
@@ -145,6 +149,8 @@
 				EDBE894921CE8F0C006A91D3 /* Segue.swift */,
 				0EF9FAF521D3E7CB00C8A71C /* Delay.swift */,
 				0E7CF92121D665B70009F591 /* DataPassable.swift */,
+				0E2E4E0621DA8D6400D3A526 /* DatePickerView.swift */,
+				0E2E4E0721DA8D6400D3A526 /* DatePickerView.xib */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -350,6 +356,7 @@
 			files = (
 				EDD0D78921C7F4E4008B48A4 /* LaunchScreen.storyboard in Resources */,
 				EDD0D78621C7F4E4008B48A4 /* Assets.xcassets in Resources */,
+				0E2E4E0921DA8D6400D3A526 /* DatePickerView.xib in Resources */,
 				EDD0D78121C7F4E2008B48A4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -487,6 +494,7 @@
 				EDC431FC21CFEA7B0001B474 /* AddVC.swift in Sources */,
 				EDD0D77E21C7F4E2008B48A4 /* MainVC.swift in Sources */,
 				0EA2E0C421D5441B00F08BA9 /* IconVC.swift in Sources */,
+				0E2E4E0821DA8D6400D3A526 /* DatePickerView.swift in Sources */,
 				EDD0D78421C7F4E2008B48A4 /* SimpleFridge.xcdatamodeld in Sources */,
 				EDBE894621CE797C006A91D3 /* ItemVC.swift in Sources */,
 				EDBE894A21CE8F0C006A91D3 /* Segue.swift in Sources */,

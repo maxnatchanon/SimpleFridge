@@ -773,68 +773,16 @@
                                     <action selector="addBtnPressed:" destination="52m-ce-B8a" eventType="touchUpInside" id="YLq-ia-Yuy"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="evW-xJ-KIk">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eMQ-AC-GoC" customClass="DatePickerView" customModule="SimpleFridge" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="75" width="375" height="592"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="llo-Sa-2y9">
-                                        <rect key="frame" x="47.5" y="146" width="280" height="260"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="nLx-6r-WyX">
-                                                <rect key="frame" x="0.0" y="0.0" width="280" height="260"/>
-                                                <subviews>
-                                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="7r5-cp-vdm">
-                                                        <rect key="frame" x="10" y="0.0" width="260" height="210"/>
-                                                        <date key="date" timeIntervalSinceReferenceDate="567321773.55119801">
-                                                            <!--2018-12-24 05:22:53 +0000-->
-                                                        </date>
-                                                        <locale key="locale" localeIdentifier="en_TH"/>
-                                                    </datePicker>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sZF-jM-872">
-                                                        <rect key="frame" x="0.0" y="210" width="280" height="50"/>
-                                                        <color key="backgroundColor" red="0.94054216150000003" green="0.64749795200000004" blue="0.43914979700000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="50" id="6dL-Xe-iIV"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="22"/>
-                                                        <state key="normal" title="OK">
-                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                        <connections>
-                                                            <action selector="datePickerBtnPressed:" destination="52m-ce-B8a" eventType="touchUpInside" id="TLy-Fb-Kfh"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="7r5-cp-vdm" secondAttribute="trailing" constant="10" id="S6M-Pi-TYE"/>
-                                                    <constraint firstAttribute="trailing" secondItem="sZF-jM-872" secondAttribute="trailing" id="TEa-AS-hyK"/>
-                                                    <constraint firstItem="sZF-jM-872" firstAttribute="leading" secondItem="nLx-6r-WyX" secondAttribute="leading" id="lpe-GP-TqW"/>
-                                                    <constraint firstItem="7r5-cp-vdm" firstAttribute="leading" secondItem="nLx-6r-WyX" secondAttribute="leading" constant="10" id="sln-s6-gWQ"/>
-                                                </constraints>
-                                            </stackView>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstItem="nLx-6r-WyX" firstAttribute="top" secondItem="llo-Sa-2y9" secondAttribute="top" id="2L8-xq-cab"/>
-                                            <constraint firstAttribute="width" constant="280" id="2Qx-c3-Vqb"/>
-                                            <constraint firstAttribute="bottom" secondItem="nLx-6r-WyX" secondAttribute="bottom" id="67O-Lh-ucM"/>
-                                            <constraint firstItem="nLx-6r-WyX" firstAttribute="leading" secondItem="llo-Sa-2y9" secondAttribute="leading" id="Xog-YJ-R4n"/>
-                                            <constraint firstAttribute="height" constant="260" id="axG-IE-vkF"/>
-                                            <constraint firstAttribute="trailing" secondItem="nLx-6r-WyX" secondAttribute="trailing" id="mBC-Bp-HR7"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.35009096746575341" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="llo-Sa-2y9" firstAttribute="centerX" secondItem="evW-xJ-KIk" secondAttribute="centerX" id="ICH-vS-5FY"/>
-                                    <constraint firstItem="llo-Sa-2y9" firstAttribute="centerY" secondItem="evW-xJ-KIk" secondAttribute="centerY" constant="-20" id="Qlp-ko-bwl"/>
-                                </constraints>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="ezv-oP-3zE" firstAttribute="trailing" secondItem="eMQ-AC-GoC" secondAttribute="trailing" id="06k-0P-hOV"/>
                             <constraint firstItem="wlw-U2-7Vp" firstAttribute="top" secondItem="Dtg-GA-suK" secondAttribute="bottom" id="4l1-zZ-QhX"/>
-                            <constraint firstItem="evW-xJ-KIk" firstAttribute="top" secondItem="wlw-U2-7Vp" secondAttribute="bottom" id="5xP-pK-elh"/>
-                            <constraint firstItem="evW-xJ-KIk" firstAttribute="leading" secondItem="ezv-oP-3zE" secondAttribute="leading" id="7DF-Ci-WIy"/>
+                            <constraint firstItem="eMQ-AC-GoC" firstAttribute="top" secondItem="wlw-U2-7Vp" secondAttribute="bottom" id="7O7-Ff-Drk"/>
                             <constraint firstItem="1zw-TY-o6r" firstAttribute="top" secondItem="Zmd-Lw-2OM" secondAttribute="bottom" constant="15" id="8ow-eZ-ukF"/>
                             <constraint firstItem="Dtg-GA-suK" firstAttribute="leading" secondItem="e21-sL-sBO" secondAttribute="leading" id="Cq9-6O-OsO"/>
                             <constraint firstAttribute="trailing" secondItem="Dtg-GA-suK" secondAttribute="trailing" id="DEg-XA-De6"/>
@@ -847,13 +795,13 @@
                             <constraint firstItem="kum-6z-cVc" firstAttribute="top" secondItem="1zw-TY-o6r" secondAttribute="bottom" constant="15" id="bp7-ya-FfM"/>
                             <constraint firstItem="ezv-oP-3zE" firstAttribute="trailing" secondItem="1zw-TY-o6r" secondAttribute="trailing" constant="35" id="eAg-Xo-9IV"/>
                             <constraint firstItem="1zw-TY-o6r" firstAttribute="leading" secondItem="ezv-oP-3zE" secondAttribute="leading" constant="35" id="f91-8j-ZpF"/>
-                            <constraint firstAttribute="bottom" secondItem="evW-xJ-KIk" secondAttribute="bottom" id="fYu-8h-CM1"/>
                             <constraint firstItem="ezv-oP-3zE" firstAttribute="top" secondItem="Dtg-GA-suK" secondAttribute="bottom" id="gB5-QP-Oro"/>
                             <constraint firstItem="ezv-oP-3zE" firstAttribute="trailing" secondItem="kum-6z-cVc" secondAttribute="trailing" constant="35" id="gY8-JZ-Ohg"/>
-                            <constraint firstItem="ezv-oP-3zE" firstAttribute="trailing" secondItem="evW-xJ-KIk" secondAttribute="trailing" id="kW7-Cq-2wW"/>
                             <constraint firstItem="ITy-7Z-Is3" firstAttribute="leading" secondItem="ezv-oP-3zE" secondAttribute="leading" constant="35" id="maO-1a-fH2"/>
                             <constraint firstItem="wlw-U2-7Vp" firstAttribute="trailing" secondItem="ezv-oP-3zE" secondAttribute="trailing" id="pqV-aL-MKT"/>
                             <constraint firstItem="Dtg-GA-suK" firstAttribute="top" secondItem="e21-sL-sBO" secondAttribute="top" id="qlE-0W-g8x"/>
+                            <constraint firstItem="ezv-oP-3zE" firstAttribute="bottom" secondItem="eMQ-AC-GoC" secondAttribute="bottom" id="rXQ-b7-1pC"/>
+                            <constraint firstItem="eMQ-AC-GoC" firstAttribute="leading" secondItem="e21-sL-sBO" secondAttribute="leading" id="vBK-1a-8VW"/>
                             <constraint firstItem="ITy-7Z-Is3" firstAttribute="top" secondItem="kum-6z-cVc" secondAttribute="bottom" constant="15" id="z8J-6n-IQ2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ezv-oP-3zE"/>
@@ -861,9 +809,7 @@
                     <connections>
                         <outlet property="addBtn" destination="Y3A-I3-zgd" id="Mul-85-wZM"/>
                         <outlet property="amountTextfield" destination="8S2-3K-5xe" id="GSn-pS-rRn"/>
-                        <outlet property="datePicker" destination="7r5-cp-vdm" id="8d5-fb-NB0"/>
-                        <outlet property="datePickerPopUp" destination="llo-Sa-2y9" id="Wrc-dq-jKE"/>
-                        <outlet property="datePickerView" destination="evW-xJ-KIk" id="Vvy-0v-g08"/>
+                        <outlet property="datePickerView" destination="eMQ-AC-GoC" id="T3F-6d-NNX"/>
                         <outlet property="dateTextfield" destination="Kf1-aa-tp0" id="x2A-ho-kW8"/>
                         <outlet property="iconImage" destination="e0R-ee-YDB" id="d1N-N7-1RY"/>
                         <outlet property="iconView" destination="Zmd-Lw-2OM" id="2CL-YE-Lg7"/>
