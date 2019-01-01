@@ -85,18 +85,12 @@ class ItemVC: UIViewController {
         itemVM.selectedItem.value!.amount -= 1
         showingCell?.insertData(withItem: self.itemVM.selectedItem.value!)
         refreshDetailView()
-        if (itemVM.selectedItem.value!.amount == 1) {
-            showingCell!.unitForOnlyOne()
-        }
     }
     
     @IBAction func increaseAmountBtnPressed(_ sender: Any) {
         itemVM.selectedItem.value!.amount += 1
         showingCell?.insertData(withItem: self.itemVM.selectedItem.value!)
         refreshDetailView()
-        if (itemVM.selectedItem.value!.amount == 2) {
-            showingCell!.unitForMoreThanOne()
-        }
     }
     
     @IBAction func deleteBtnPressed(_ sender: Any) {
