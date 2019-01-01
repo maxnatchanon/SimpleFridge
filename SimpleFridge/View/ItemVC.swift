@@ -29,6 +29,7 @@ class ItemVC: UIViewController {
     @IBOutlet weak var selectedItemDecreaseAmountBtn: UIButton!
     @IBOutlet weak var selectedtemIncreaseAmountBtn: UIButton!
     @IBOutlet weak var selectedItemDateLbl: UILabel!
+    @IBOutlet weak var datePickerView: DatePickerView!
     
     var fridge: Fridge!
     private var itemVM: ItemVM!
@@ -61,6 +62,7 @@ class ItemVC: UIViewController {
         bindTableView()
         bindDetailView()
         setUpDetailView()
+        setUpDatePickerView()
         setUpSearchBar()
         setUpEditFunction()
     }
@@ -81,8 +83,8 @@ class ItemVC: UIViewController {
             return
         }
         itemVM.selectedItem.value!.amount -= 1
-        selectedItemAmountLbl.text = String(itemVM.selectedItem.value!.amount)
-        showingCell?.amountLbl.text = String(itemVM.selectedItem.value!.amount)
+        showingCell?.insertData(withItem: self.itemVM.selectedItem.value!)
+        refreshDetailView()
         if (itemVM.selectedItem.value!.amount == 1) {
             showingCell!.unitForOnlyOne()
         }
@@ -90,8 +92,8 @@ class ItemVC: UIViewController {
     
     @IBAction func increaseAmountBtnPressed(_ sender: Any) {
         itemVM.selectedItem.value!.amount += 1
-        selectedItemAmountLbl.text = String(itemVM.selectedItem.value!.amount)
-        showingCell?.amountLbl.text = String(itemVM.selectedItem.value!.amount)
+        showingCell?.insertData(withItem: self.itemVM.selectedItem.value!)
+        refreshDetailView()
         if (itemVM.selectedItem.value!.amount == 2) {
             showingCell!.unitForMoreThanOne()
         }
@@ -224,6 +226,19 @@ class ItemVC: UIViewController {
         
     }
     
+    /// Set up date picker view
+    private func setUpDatePickerView() {
+        datePickerView.alpha = 0
+        datePickerView.btnFunction = { [weak self] in
+            self?.itemVM.editSelectedItemExpireDate(withDate: (self?.datePickerView.selectedDate)!)
+            self?.showingCell?.insertData(withItem: (self?.itemVM.selectedItem.value!)!)
+            self?.refreshDetailView()
+            UIView.animate(withDuration: 0.3, animations: {
+                self?.datePickerView.alpha = 0
+            })
+        }
+    }
+    
     /// Bind search bar text and filtered item list
     private func setUpSearchBar() {
         searchBar.rx.text.orEmpty
@@ -316,7 +331,10 @@ class ItemVC: UIViewController {
     }
     
     @objc private func editItemExpireDate() {
-        // TODO: Edit item expire date. Show date picker?
+        datePickerView.setInitialDate(withDate: itemVM.selectedItem.value!.expireDate!)
+        UIView.animate(withDuration: 0.3) {
+            self.datePickerView.alpha = 1
+        }
     }
     
 }

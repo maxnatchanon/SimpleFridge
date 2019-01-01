@@ -542,6 +542,10 @@
                                     <constraint firstItem="3n3-Gy-wAp" firstAttribute="leading" secondItem="4r7-eF-SBL" secondAttribute="leading" id="i9z-uv-vZp"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OZC-kk-wNA" customClass="DatePickerView" customModule="SimpleFridge" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="75" width="375" height="592"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -551,22 +555,27 @@
                             <constraint firstItem="wuI-sX-4ms" firstAttribute="leading" secondItem="E5S-0o-mCg" secondAttribute="leading" id="3rK-gI-a2a"/>
                             <constraint firstItem="gfH-D0-CJI" firstAttribute="leading" secondItem="Ehi-Tl-1cx" secondAttribute="leading" id="Avg-p0-iwJ"/>
                             <constraint firstAttribute="trailing" secondItem="wuI-sX-4ms" secondAttribute="trailing" id="P8C-ji-JXV"/>
+                            <constraint firstItem="Ehi-Tl-1cx" firstAttribute="bottom" secondItem="OZC-kk-wNA" secondAttribute="bottom" id="Slw-A5-6ol"/>
                             <constraint firstItem="4r7-eF-SBL" firstAttribute="leading" secondItem="Ehi-Tl-1cx" secondAttribute="leading" id="Tlc-rk-FB8"/>
                             <constraint firstItem="tFn-pe-mf5" firstAttribute="leading" secondItem="Ehi-Tl-1cx" secondAttribute="leading" id="UiI-4y-RXc"/>
                             <constraint firstItem="gfH-D0-CJI" firstAttribute="top" secondItem="tFn-pe-mf5" secondAttribute="bottom" id="WHo-K9-An6"/>
                             <constraint firstItem="wuI-sX-4ms" firstAttribute="top" secondItem="E5S-0o-mCg" secondAttribute="top" id="XT7-rE-u8D"/>
                             <constraint firstItem="kaD-zd-PJh" firstAttribute="top" secondItem="tFn-pe-mf5" secondAttribute="bottom" id="eNL-5x-ez3"/>
                             <constraint firstAttribute="bottom" secondItem="4r7-eF-SBL" secondAttribute="bottom" id="gb6-i1-eX7"/>
+                            <constraint firstItem="OZC-kk-wNA" firstAttribute="top" secondItem="tFn-pe-mf5" secondAttribute="bottom" id="gml-Fw-D5J"/>
                             <constraint firstItem="tFn-pe-mf5" firstAttribute="top" secondItem="Ehi-Tl-1cx" secondAttribute="top" id="jfb-y0-4mG"/>
                             <constraint firstAttribute="bottom" secondItem="gfH-D0-CJI" secondAttribute="bottom" id="l5e-XY-GFk"/>
+                            <constraint firstItem="OZC-kk-wNA" firstAttribute="leading" secondItem="Ehi-Tl-1cx" secondAttribute="leading" id="mIL-9U-eCv"/>
                             <constraint firstItem="tFn-pe-mf5" firstAttribute="top" secondItem="wuI-sX-4ms" secondAttribute="bottom" id="uHY-ca-ZfG"/>
                             <constraint firstAttribute="bottom" secondItem="kaD-zd-PJh" secondAttribute="bottom" id="v5x-oS-Q4e"/>
                             <constraint firstItem="kaD-zd-PJh" firstAttribute="leading" secondItem="Ehi-Tl-1cx" secondAttribute="leading" id="wO1-fb-HXQ"/>
+                            <constraint firstItem="OZC-kk-wNA" firstAttribute="trailing" secondItem="Ehi-Tl-1cx" secondAttribute="trailing" id="x6R-LQ-gjw"/>
                             <constraint firstItem="tFn-pe-mf5" firstAttribute="trailing" secondItem="Ehi-Tl-1cx" secondAttribute="trailing" id="x7H-KG-6Gz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ehi-Tl-1cx"/>
                     </view>
                     <connections>
+                        <outlet property="datePickerView" destination="OZC-kk-wNA" id="eef-em-SPb"/>
                         <outlet property="detailView" destination="4r7-eF-SBL" id="U6s-M8-wHt"/>
                         <outlet property="detailViewBottomConstraint" destination="gb6-i1-eX7" id="c85-eb-03G"/>
                         <outlet property="emptyView" destination="kaD-zd-PJh" id="KPI-1v-Kyc"/>
