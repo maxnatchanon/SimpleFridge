@@ -10,13 +10,14 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class ItemVC: UIViewController {
+class ItemVC: UIViewController, DataPassable {
     
     // MARK: - Variable
     
     @IBOutlet weak var itemTableView: UITableView!
     @IBOutlet weak var emptyView: UIView!
     @IBOutlet weak var detailView: UIView!
+    @IBOutlet weak var detailViewBar: UIView!
     @IBOutlet weak var detailViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var itemTableViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var fridgeNameLbl: UILabel!
@@ -65,6 +66,11 @@ class ItemVC: UIViewController {
         setUpDatePickerView()
         setUpSearchBar()
         setUpEditFunction()
+    }
+    
+    func pass(data: String) {
+        itemVM.editSelectedItemIcon(withIcon: data)
+        refreshDetailView()
     }
     
     /// Button function
@@ -161,6 +167,7 @@ class ItemVC: UIViewController {
     private func bindDetailView() {
         itemVM.selectedItem.asObservable().bind { (selectedItem) in
                 if (selectedItem != nil) {
+                    self.selectedItemIcon.image = UIImage.init(named: selectedItem!.icon!)
                     self.selectedItemNameLbl.text = selectedItem!.name!
                     self.selectedItemAmountLbl.text = String(selectedItem!.amount)
                     self.selectedItemExpireMsgLbl.text = selectedItem!.getExpireMessage()
@@ -171,6 +178,7 @@ class ItemVC: UIViewController {
     
     /// Set up pan gesture recognizer for detail view
     private func setUpDetailView() {
+        detailViewBar.layer.cornerRadius = 2.5
         detailViewBottomConstraint.constant = -350
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(self.moveDetailView(_:)))
         detailView.isUserInteractionEnabled = true
@@ -256,6 +264,7 @@ class ItemVC: UIViewController {
                 self.itemVM.filteredItemList.accept(self.itemVM.itemList.filter({ (item) -> Bool in
                     item.name!.hasPrefix(self.searchBar.text ?? "")
                 }))
+                self.itemTableView.reloadData()
             }
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
@@ -264,6 +273,7 @@ class ItemVC: UIViewController {
     
     /// Refresh detail view with data from itemVM.selectedItem
     private func refreshDetailView() {
+        selectedItemIcon.image = UIImage.init(named: itemVM.selectedItem.value!.icon!)
         selectedItemNameLbl.text = itemVM.selectedItem.value!.name!
         selectedItemAmountLbl.text = String(itemVM.selectedItem.value!.amount)
         selectedItemExpireMsgLbl.text = itemVM.selectedItem.value!.getExpireMessage()
@@ -272,6 +282,8 @@ class ItemVC: UIViewController {
     
     /// Set up gesture recognizer for item editing in detail view
     private func setUpEditFunction() {
+        selectedItemIcon.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.editItemIcon)))
+        selectedItemIcon.isUserInteractionEnabled = true
         selectedItemNameLbl.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.editItemName)))
         selectedItemNameLbl.isUserInteractionEnabled = true
         selectedItemAmountLbl.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.editItemAmount)))
@@ -281,6 +293,10 @@ class ItemVC: UIViewController {
     }
     
     /// Edit item functions
+    @objc private func editItemIcon() {
+        performSegue(withIdentifier: SegueIdentifier.editIcon, sender: nil)
+    }
+    
     @objc private func editItemName() {
         let alert = UIAlertController(title: "Edit item name", message: "Enter new item name.", preferredStyle: .alert)
         alert.addTextField { (textfield) in
@@ -352,6 +368,10 @@ extension ItemVC {
                     self.showingItemIndex = nil
                     self.itemVM.selectedItem.accept(nil)
                 }
+            }
+        case .editIcon:
+            if let iconVC = segue.destination as? IconVC {
+                iconVC.delegate = self
             }
         default: return
         }

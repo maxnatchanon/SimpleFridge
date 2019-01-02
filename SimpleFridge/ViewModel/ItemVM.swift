@@ -65,6 +65,11 @@ class ItemVM {
         fetchItemData()
     }
     
+    func editSelectedItemIcon(withIcon icon: String) {
+        selectedItem.value!.icon = icon
+        saveData()
+    }
+    
     func editSelectedItemName(withName name: String) {
         selectedItem.value!.name = name
         saveData()

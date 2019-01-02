@@ -44,6 +44,8 @@ class ItemCell: UITableViewCell {
             containerView.backgroundColor = UIColor.init(red: 200/255, green: 200/255, blue: 200/255, alpha: 1.0)
         } else if (item.getDayCountToExpireDate() <= 1) {
             containerView.backgroundColor = UIColor.init(red: 255/255, green: 231/255, blue: 231/255, alpha: 1.0)
+        } else {
+            containerView.backgroundColor = UIColor.init(red: 242/255, green: 242/255, blue: 243/255, alpha: 1.0)
         }
     }
     

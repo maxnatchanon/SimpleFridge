@@ -15,7 +15,7 @@ class IconVC: UIViewController, UICollectionViewDelegateFlowLayout {
     @IBOutlet weak var iconCollectionView: UICollectionView!
     
     var delegate: DataPassable?
-     private var icons: [String] = []
+    private var icons: [String] = []
     private var selectedIcon: String?
     private let disposeBag = DisposeBag()
     

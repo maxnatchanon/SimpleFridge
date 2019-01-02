@@ -577,6 +577,7 @@
                     <connections>
                         <outlet property="datePickerView" destination="OZC-kk-wNA" id="eef-em-SPb"/>
                         <outlet property="detailView" destination="4r7-eF-SBL" id="U6s-M8-wHt"/>
+                        <outlet property="detailViewBar" destination="cZa-sh-Mpm" id="D5A-hY-edp"/>
                         <outlet property="detailViewBottomConstraint" destination="gb6-i1-eX7" id="c85-eb-03G"/>
                         <outlet property="emptyView" destination="kaD-zd-PJh" id="KPI-1v-Kyc"/>
                         <outlet property="fridgeNameLbl" destination="HUt-Ce-XfH" id="9BO-ZP-GCu"/>
@@ -592,6 +593,7 @@
                         <outlet property="selectedtemIncreaseAmountBtn" destination="diz-Mf-PPt" id="T3b-D9-bSR"/>
                         <segue destination="52m-ce-B8a" kind="show" identifier="showAdd" customClass="SegueFromRight" customModule="SimpleFridge" customModuleProvider="target" id="JMQ-Bg-dhY"/>
                         <segue destination="OWt-TO-0lr" kind="unwind" identifier="unwindToMain" customClass="SegueFromRightUnwind" customModule="SimpleFridge" customModuleProvider="target" unwindAction="unwindToMainWithSegue:" id="zlZ-B3-Cic"/>
+                        <segue destination="fOP-qI-fEG" kind="show" identifier="editIcon" id="Zh4-yO-1Zh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bYl-YV-Jpe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -932,4 +934,7 @@
         <image name="plusIcon" width="17" height="17"/>
         <image name="settingIcon" width="32" height="32"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Zh4-yO-1Zh"/>
+    </inferredMetricsTieBreakers>
 </document>

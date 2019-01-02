@@ -13,6 +13,7 @@ enum SegueIdentifier: String {
     case showItem = "showItem"
     case showAdd = "showAdd"
     case showIcon = "showIcon"
+    case editIcon = "editIcon"
 }
 
 extension UIViewController {
