@@ -59,8 +59,7 @@ class ItemVM {
     }
     
     func deleteSelectedItem() {
-        context.delete(selectedItem.value!)
-        fridge.itemCount -= 1
+        fridge.deleteItem(selectedItem.value!, in: context)
         selectedItem.accept(nil)
         saveData()
         fetchItemData()

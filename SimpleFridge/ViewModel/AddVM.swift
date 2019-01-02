@@ -56,15 +56,13 @@ class AddVM {
     func saveData(completion: ()->Void) {
         let entity = NSEntityDescription.entity(forEntityName: "Item", in: context)
         let newItem = NSManagedObject(entity: entity!, insertInto: context) as! Item
-        newItem.name = itemName.value
-        newItem.amount = Int32(amountString.value) ?? 1
-        newItem.unit = unit.value.lowercased().capitalized
-        newItem.expireDate = Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: expireDate.value)
-        newItem.addDate = Date()
-        newItem.icon = icon.value
-        newItem.fridge = fridge
-        fridge.items?.adding(newItem)
-        fridge.itemCount += 1
+        newItem.initData(withName: itemName.value,
+                         amount: Int32(amountString.value) ?? 1,
+                         unit: unit.value.lowercased().capitalized,
+                         expireDate: Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: expireDate.value)!,
+                         icon: icon.value)
+        fridge.addItem(newItem)
+        
         do {
             try context.save()
         } catch {

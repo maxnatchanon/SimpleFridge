@@ -35,9 +35,7 @@ class MainVM {
     func addFridge(withName name: String) -> Bool {
         let entity = NSEntityDescription.entity(forEntityName: "Fridge", in: context)
         let newFridge = NSManagedObject(entity: entity!, insertInto: context) as! Fridge
-        newFridge.name = name
-        newFridge.createDate = Date()
-        newFridge.itemCount = 0
+        newFridge.initData(withName: name)
         do {
             try context.save()
             fetchFridgeData()

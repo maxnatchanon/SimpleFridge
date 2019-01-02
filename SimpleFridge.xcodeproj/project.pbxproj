@@ -11,6 +11,7 @@
 		0E2E4E0921DA8D6400D3A526 /* DatePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E2E4E0721DA8D6400D3A526 /* DatePickerView.xib */; };
 		0E67D05721CA06D90030A9F5 /* FridgeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E67D05621CA06D90030A9F5 /* FridgeCell.swift */; };
 		0E7CF92221D665B70009F591 /* DataPassable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7CF92121D665B70009F591 /* DataPassable.swift */; };
+		0E97AA8721DD3A2E00B61DBD /* Fridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E97AA8621DD3A2E00B61DBD /* Fridge.swift */; };
 		0EA2E0C421D5441B00F08BA9 /* IconVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA2E0C321D5441B00F08BA9 /* IconVC.swift */; };
 		0EA2E0C621D545DB00F08BA9 /* IconCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA2E0C521D545DB00F08BA9 /* IconCell.swift */; };
 		0EF9FAF421D3D7FD00C8A71C /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF9FAF321D3D7FD00C8A71C /* Item.swift */; };
@@ -57,6 +58,7 @@
 		0E2E4E0721DA8D6400D3A526 /* DatePickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DatePickerView.xib; sourceTree = "<group>"; };
 		0E67D05621CA06D90030A9F5 /* FridgeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FridgeCell.swift; sourceTree = "<group>"; };
 		0E7CF92121D665B70009F591 /* DataPassable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPassable.swift; sourceTree = "<group>"; };
+		0E97AA8621DD3A2E00B61DBD /* Fridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fridge.swift; sourceTree = "<group>"; };
 		0EA2E0C321D5441B00F08BA9 /* IconVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconVC.swift; sourceTree = "<group>"; };
 		0EA2E0C521D545DB00F08BA9 /* IconCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconCell.swift; sourceTree = "<group>"; };
 		0EF9FAF321D3D7FD00C8A71C /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				0EF9FAF321D3D7FD00C8A71C /* Item.swift */,
+				0E97AA8621DD3A2E00B61DBD /* Fridge.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -485,6 +488,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E97AA8721DD3A2E00B61DBD /* Fridge.swift in Sources */,
 				EDBE894821CE7F18006A91D3 /* ItemCell.swift in Sources */,
 				0E67D05721CA06D90030A9F5 /* FridgeCell.swift in Sources */,
 				0E7CF92221D665B70009F591 /* DataPassable.swift in Sources */,

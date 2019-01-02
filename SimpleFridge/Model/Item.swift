@@ -10,6 +10,17 @@ import Foundation
 import UIKit
 
 extension Item {
+    
+    func initData(withName name: String, amount: Int32, unit: String, expireDate: Date, icon: String) {
+        self.name = name
+        self.amount = amount
+        self.unit = unit
+        self.expireDate = expireDate
+        self.icon = icon
+        self.addDate = Date()
+        self.notified = false
+    }
+    
     func getDayCountToExpireDate() -> Int {
         let today = Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: Date())!
         let interval = self.expireDate!.timeIntervalSince(today)
