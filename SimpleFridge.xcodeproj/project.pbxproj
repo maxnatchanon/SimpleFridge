@@ -34,6 +34,9 @@
 		EDD0D78921C7F4E4008B48A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDD0D78721C7F4E4008B48A4 /* LaunchScreen.storyboard */; };
 		EDD0D79421C7F4E4008B48A4 /* SimpleFridgeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD0D79321C7F4E4008B48A4 /* SimpleFridgeTests.swift */; };
 		EDD0D79F21C7F4E4008B48A4 /* SimpleFridgeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD0D79E21C7F4E4008B48A4 /* SimpleFridgeUITests.swift */; };
+		EDF589D921DE6EE500F312CE /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF589D821DE6EE500F312CE /* SettingVC.swift */; };
+		EDF589DB21DE6F8000F312CE /* FridgeListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF589DA21DE6F8000F312CE /* FridgeListCell.swift */; };
+		EDF589DD21DE702B00F312CE /* SettingVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF589DC21DE702B00F312CE /* SettingVM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +94,9 @@
 		EDD0D79A21C7F4E4008B48A4 /* SimpleFridgeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleFridgeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDD0D79E21C7F4E4008B48A4 /* SimpleFridgeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleFridgeUITests.swift; sourceTree = "<group>"; };
 		EDD0D7A021C7F4E4008B48A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDF589D821DE6EE500F312CE /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
+		EDF589DA21DE6F8000F312CE /* FridgeListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FridgeListCell.swift; sourceTree = "<group>"; };
+		EDF589DC21DE702B00F312CE /* SettingVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVM.swift; sourceTree = "<group>"; };
 		F2CA1E43BAB158BA1F8B070A /* Pods-SimpleFridgeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleFridgeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleFridgeUITests/Pods-SimpleFridgeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		FDDCD8DCE0E64EDA9EF93C03 /* Pods-SimpleFridge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleFridge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleFridge/Pods-SimpleFridge.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -130,9 +136,11 @@
 				EDBE894521CE797C006A91D3 /* ItemVC.swift */,
 				EDC431FB21CFEA7B0001B474 /* AddVC.swift */,
 				0EA2E0C321D5441B00F08BA9 /* IconVC.swift */,
+				EDF589D821DE6EE500F312CE /* SettingVC.swift */,
 				0E67D05621CA06D90030A9F5 /* FridgeCell.swift */,
 				EDBE894721CE7F18006A91D3 /* ItemCell.swift */,
 				0EA2E0C521D545DB00F08BA9 /* IconCell.swift */,
+				EDF589DA21DE6F8000F312CE /* FridgeListCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -164,6 +172,7 @@
 				ED30BEE721CD248D0033B3D0 /* MainVM.swift */,
 				ED30BEE921CD4DEE0033B3D0 /* ItemVM.swift */,
 				EDC431FD21CFF1E60001B474 /* AddVM.swift */,
+				EDF589DC21DE702B00F312CE /* SettingVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -494,15 +503,18 @@
 				0E7CF92221D665B70009F591 /* DataPassable.swift in Sources */,
 				ED30BEEA21CD4DEE0033B3D0 /* ItemVM.swift in Sources */,
 				ED30BEE821CD248D0033B3D0 /* MainVM.swift in Sources */,
+				EDF589D921DE6EE500F312CE /* SettingVC.swift in Sources */,
 				0EF9FAF421D3D7FD00C8A71C /* Item.swift in Sources */,
 				EDC431FC21CFEA7B0001B474 /* AddVC.swift in Sources */,
 				EDD0D77E21C7F4E2008B48A4 /* MainVC.swift in Sources */,
 				0EA2E0C421D5441B00F08BA9 /* IconVC.swift in Sources */,
+				EDF589DD21DE702B00F312CE /* SettingVM.swift in Sources */,
 				0E2E4E0821DA8D6400D3A526 /* DatePickerView.swift in Sources */,
 				EDD0D78421C7F4E2008B48A4 /* SimpleFridge.xcdatamodeld in Sources */,
 				EDBE894621CE797C006A91D3 /* ItemVC.swift in Sources */,
 				EDBE894A21CE8F0C006A91D3 /* Segue.swift in Sources */,
 				0EA2E0C621D545DB00F08BA9 /* IconCell.swift in Sources */,
+				EDF589DB21DE6F8000F312CE /* FridgeListCell.swift in Sources */,
 				EDC431FE21CFF1E60001B474 /* AddVM.swift in Sources */,
 				EDD0D77C21C7F4E2008B48A4 /* AppDelegate.swift in Sources */,
 				0EF9FAF621D3E7CB00C8A71C /* Delay.swift in Sources */,

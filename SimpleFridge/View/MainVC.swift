@@ -43,10 +43,6 @@ class MainVC: UIViewController {
         bindTableView()
     }
     
-    @IBAction func settingBtnPressed(_ sender: Any) {
-        // TODO: Show setting screen
-    }
-    
     
 
     // MARK: - Subfunction
@@ -118,7 +114,6 @@ extension MainVC {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let identifierString = segue.identifier,
             let identifier = SegueIdentifier(rawValue: identifierString) else {
-                assertionFailure("Getting segue identifier failed")
                 return
         }
         
