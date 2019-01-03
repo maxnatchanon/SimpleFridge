@@ -31,7 +31,6 @@ class SettingVC: UIViewController {
     
     private func setUpTableView() {
         fridgeListTableView.delegate = self
-        //fridgeListTableView.separatorColor = UIColor.init(red: 242/255, green: 242/255, blue: 243/255, alpha: 1.0)
         fridgeListTableView.rowHeight = 60
         settingVM.fridgeList.asObservable().bind(to: fridgeListTableView.rx.items(cellIdentifier: FridgeListCell.identifier, cellType: FridgeListCell.self)) {
                 (row, fridge, cell) in
