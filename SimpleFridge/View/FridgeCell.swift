@@ -19,7 +19,6 @@ class FridgeCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         containerView.layer.cornerRadius = 10
     }
 

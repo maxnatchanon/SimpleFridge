@@ -26,7 +26,7 @@ class IconVC: UIViewController, UICollectionViewDelegateFlowLayout {
         bindCollectionView()
     }
     
-    /// Pass selected icon to AddVC
+    /// Pass selected icon to AddVC/ItemVC
     override func viewWillDisappear(_ animated: Bool) {
         delegate?.pass(data: selectedIcon!)
     }
