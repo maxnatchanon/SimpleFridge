@@ -45,7 +45,12 @@ class SettingVC: UIViewController {
     
 }
 
+// MARK: - Swipe action
+
+/// Swipe actions for fridge list table view
 extension SettingVC: UITableViewDelegate {
+    
+    /// Set up swipe action
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let clearAction = UIContextualAction(style: .normal, title: "Clear") { (action, view, handler) in
@@ -67,6 +72,8 @@ extension SettingVC: UITableViewDelegate {
         configuration.performsFirstActionWithFullSwipe = false
         return configuration
     }
+    
+    /// Show confirmation alert
     
     private func showClearAlert(forIndexPath indexPath: IndexPath) {
         let alert = UIAlertController(title: "Clear all items", message: "Remove all items in this fridge.\nThis cannot be undone.", preferredStyle: .alert)

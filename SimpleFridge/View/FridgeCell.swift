@@ -14,6 +14,7 @@ class FridgeCell: UITableViewCell {
 
     @IBOutlet weak var fridgeNameLbl: UILabel!
     @IBOutlet weak var itemCountLbl: UILabel!
+    @IBOutlet weak var itemUnitLbl: UILabel!
     @IBOutlet weak var containerView: UIView!
     
     override func awakeFromNib() {
@@ -29,6 +30,11 @@ class FridgeCell: UITableViewCell {
     func insertDataWith(fridge: Fridge) {
         self.fridgeNameLbl.text = fridge.name ?? ""
         self.itemCountLbl.text = String(fridge.itemCount)
+        if (fridge.itemCount > 1) {
+            itemUnitLbl.text = "Items"
+        } else {
+            itemUnitLbl.text = "Item"
+        }
     }
 
 }

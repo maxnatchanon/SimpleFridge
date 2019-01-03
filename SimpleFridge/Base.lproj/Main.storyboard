@@ -180,6 +180,7 @@
                                             <outlet property="containerView" destination="EjB-Gq-yBt" id="sbT-WN-uDs"/>
                                             <outlet property="fridgeNameLbl" destination="6SW-dm-1rA" id="LxN-m2-HAn"/>
                                             <outlet property="itemCountLbl" destination="Yvh-zE-dOw" id="U0x-8o-q34"/>
+                                            <outlet property="itemUnitLbl" destination="Czu-5v-IuT" id="Q1e-Hn-Z49"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
